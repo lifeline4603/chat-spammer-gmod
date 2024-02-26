@@ -1,6 +1,3 @@
--- secret.notify("gir489_spammer timer couldn't start")
--- secret.notify("check secret console for more info")
-
 -- messages
 
 local OINK_CHATMESSAGES = {
