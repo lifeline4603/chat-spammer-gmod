@@ -18,7 +18,7 @@ local HVHTALK_CHATMESSAGES = {
 	"ur literally dog shit at this game!!!!!!",
 	"nn dog? nn dog? nn dog? nn dog? nn dog? nn dog? ",
 	[["why am i missing so much?!?!?!?!?" no fake angles in 2k23????]],
-	"you can buy a better cheat at oink.industries",
+	"you can buy a better cheat at secretservice.club",
 	"im winning too much bro. change up ur settings so u can beat me!!!!!!!!!",
 	"using idiotbox?",
 	"is ur nospread and norecoil working???",
