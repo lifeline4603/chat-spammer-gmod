@@ -3,5 +3,5 @@ an up to date chat spammer with frequent updates for 3 different cheats (oink.in
 
 todo:
 - global chat spammer
-- ooc integration
-- secret spam
+~~- ooc integration~~
+~~- secret spam~~
