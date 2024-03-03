@@ -5,3 +5,4 @@ todo:
 - global chat spammer
 - ~~ooc integration~~ for secret and oink
 - ~~secret spam~~ for cheadle and oink
+- maybe a small effect or animation for yk
