@@ -125,6 +125,21 @@ local CAT_CHATMESSAGES = {
 	"growling noises are soooooo cute grrrrrprrrr"
 }
 
+local SECRET_CHATMESSAGES = {
+	"secretservice on top! get at secretservice.club",
+	"Get Good, Get secretservice.club",
+	"Want the best gmod cheat, Get secretservice.club",
+	"SecretService.club owns you!!",
+	"SecretService.club owns me!! UwU",
+	"SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club",
+	[["YO WHAT CHEAT IS THAT WHAT CHEAT" SECRETSERVICE.CLUB ON TOPPPP]],
+	"SecretService.club > any cheat",
+	"1v1 me bro, SecretService.club on TOPP!!!"
+	"YOU WISH YOU HAVE SECRETSERVICE.CLUB"
+	"https://imgur.com/a/qZrfSrO SECRETSERVICE.CLUB OWNS YOU!!!"
+	"LSAC? ROTAC? never heard of it, SECRETSERVICE.CLUB ON TOP!!"
+}
+
 local CUSTOM_CHATMESSAGES = { -- replace with whatever
 	"replace with custom message here",
 	"replace with custom message here",
@@ -154,6 +169,7 @@ secret.create_button("lua", "elements", "ryan fournier spam", "bFournier")
 secret.create_button("lua", "elements", "femboy spam (extreme nsfw)", "bFemboy")
 secret.create_button("lua", "elements", "shabeel spam", "bShabeel")
 secret.create_button("lua", "elements", "cat spam", "bMeow")
+secret.create_button("lua", "elements", "secret spam/advert", "bSecret")
 secret.create_button("lua", "elements", "custom spam", "bCustom")
 
 
@@ -161,10 +177,12 @@ secret.create_slider("lua", "elements", "rate (seconds)", 1, 5, "sRate")
 
 secret.create_button("lua", "elements", "destroy all timers", "bDestroy")
 
+-- insert ooc checkbox here, again I dont have sercet's api - shiba
+
 hook.Remove("Think", "hSpammer")
 hook.Add("Think", "hSpammer", function()
 
-    local _sRate = secret.config_get("sRate")
+    local _sRate = secret.config_get("sRate") -- why do you have a local for sRate when you only use it for once - shiba
 
 	if secret.config_get("bOink") then
 		timer.Create( "oink_spammer", _sRate, 0, function()
@@ -175,7 +193,7 @@ hook.Add("Think", "hSpammer", function()
 	end
 
 	if secret.config_get("bHvh") then
-		timer.Create( "hvh_spammer", rate, 0, function()
+		timer.Create( "hvh_spammer", rate, 0, function() -- also what is rate, I would fix it or edit it but I dont have sercet so ¯\_(ツ)_/¯ - shiba
 			local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
 			RunConsoleCommand("say", spamHVH)
 			
@@ -253,6 +271,14 @@ hook.Add("Think", "hSpammer", function()
 		end)
 	end
 
+	if secret.config_get("bSecret") then
+		timer.Create( "secret_spammer", rate, 0, function()
+			local spamsecret = SECRET_CHATMESSAGES[math.random(#SECRET_CHATMESSAGES)]
+			RunConsoleCommand("say", spamsecret)
+			
+		end)
+	end
+
 	if secret.config_get("bCustom") then
 		secret.log("replace anything in the CUSTOM_CHATMESSAGES table within the code!", 3)
         secret.notify("check secret console for instructions")
@@ -275,6 +301,7 @@ hook.Add("Think", "hSpammer", function()
 		timer.Remove( "femboy_spammer" ) -- femboy_spammer
 		timer.Remove( "shabeel_spammer" )
 		timer.Remove( "cat_spammer" )
+		timer.Remove( "secret_spammer" )
 	end
 end)
 
