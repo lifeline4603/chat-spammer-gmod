@@ -138,6 +138,7 @@ local SECRET_CHATMESSAGES = {
 	"YOU WISH YOU HAVE SECRETSERVICE.CLUB",
 	"https://imgur.com/a/qZrfSrO SECRETSERVICE.CLUB OWNS YOU!!!",
 	"LSAC? ROTAC? never heard of it, SECRETSERVICE.CLUB ON TOP!!"
+	"hitting this secretservice.club OG joint"
 }
 
 local CUSTOM_CHATMESSAGES = { -- replace with whatever
