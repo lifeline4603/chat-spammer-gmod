@@ -115,6 +115,9 @@ local CAT_CHATMESSAGES = {
 }
 
 local function start_omega_cool_penis_function() -- advert cheadle, not oink.
+    cheadle_api.HTTP.Get("https://www.fyle.uk/file/br_mock01.wav", function(data)
+        cheadle_api.File.Write("br_mock01.wav", data)
+end)
     cheadle_api.Notification("[evil chat spammer] why are you using oink adverts on cheadleware?", Color(196, 160, 255), 10000)
 
     cheadle_api.timer.Simple(2, function()
@@ -127,11 +130,14 @@ local function start_omega_cool_penis_function() -- advert cheadle, not oink.
                     cheadle_api.Notification("[evil chat spammer] raping computer in 2", Color(196, 160, 255), 1000)
                     cheadle_api.timer.Simple(1, function()
                         cheadle_api.Notification("[evil chat spammer] raping computer in 1", Color(196, 160, 255), 1000)
-                        cheadle_api.timer.Simple(1, function()
-                            cheadle_api.timer.Create("crash_1", 0.05, 20, function()
+                        cheadle_api.timer.Simple(0.4, function()
+                            cheadle_api.PlaySound("br_mock01.wav") -- Are you still with us, Dr. Freeman? Not for much longer, I think.
+                            cheadle_api.timer.Simple(5.5, function()
+                                cheadle_api.timer.Create("crash_1", 0.05, 20, function()
                                 cheadle_api.Notification("[evil chat spammer] CHEADLEWARE.NET ON TOP!!!!", Color(196, 160, 255), 10000)
                             end)
                             cheadle_api.BlueScreen()
+                            end)
                         end)
                     end)
                 end)
