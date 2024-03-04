@@ -21,6 +21,7 @@ local HVHTALK_CHATMESSAGES = {
 	"is ur nospread and norecoil working???",
 	"nice aa retard lmao",
 	"DID YOU SEE THAT BACKTRACK RIGHT THERE???"
+	"oink.industries > your cheat"
 }
 
 local TOXICTALK_CHATMESSAGES = {

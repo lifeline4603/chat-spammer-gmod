@@ -10,6 +10,7 @@ local HVHTALK_CHATMESSAGES = {
 	"is ur nospread and norecoil working???",
 	"nice aa retard lmao",
 	"DID YOU SEE THAT BACKTRACK RIGHT THERE???"
+    "cheadleware.net > your cheat"
 }
 
 local TOXICTALK_CHATMESSAGES = {
@@ -152,17 +153,18 @@ local mMainMenu = cheadle_api.ImGui.UIMenu("chat-spammer.lua")
 
 -- buttons and sliders
 
-local sRate = cheadle_api.ImGui.Slider(mMainMenu, "rate of spam", 1, 5)
+local sRate = cheadle_api.ImGui.Slider(mMainMenu, "rate of spam", 1, 5) -- I think I broke this 
 sRate:SetSize(250, 23)
 sRate:SetPos(295, 34)
 sRate:OnChangeFunction(function()
     cheadle_api.Log("[debug] slider value:" .. sRate:GetValue())
 end)
 
-local cOoc = cheadle_api.ImGui.Checkbox(mMainMenu, "ooc Spam")
-cOoc:SetPos(295, 100) 
-cOoc:SetClickFunction(function()
-    cheadle_api.Log("[debug] Checkbox value:" .. (cOoc:GetChecked() and "true" or "false"))
+local spamType = cheadle_api.ImGui.Dropdown(mMainMenu, "type of spam", {"Normal", "OOC", "Advert"})
+spamType:SetPos(295, 100)
+spamType:SetSelected("Normal")
+spamType:OnChangeFunction(function()
+    cheadle_api.Log("[debug] spamType value:" .. spamType:GetSelected())
 end)
 
 local bCheadle = cheadle_api.ImGui.Button(mMainMenu, "cheadle spam") -- syntax is b[STRING] for button, s[STRING] for slider
@@ -172,11 +174,13 @@ bCheadle:SetClickFunction(function()
     cheadle_api.Notification("[chat spammer] cheadle_spammer timer started", Color(196, 160, 255), 5000); 
     cheadle_api.timer.Create( "cheadle_spammer", sRate:GetValue(), 0, function()
         local spamCheadle = CHEADLEWARE_CHATMESSAGES[math.random(#CHEADLEWARE_CHATMESSAGES)]
-        if cOoc:GetChecked() == false then
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamCheadle)
-        else
-            RunConsoleCommand("say", "// " .. string.sub(spamCheadle, 1, 126)) -- this is a TERRIBLE way of doing this but if it works it works
-        end
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamCheadle, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamCheadle, 1, 119)) -- this is a TERRIBLE way of doing this but if it works it works
+        end -- annoying part about this it reduces fps by like 0.05 I could use a table and a function and blah blah blah who cares
     end)
 end)
 
@@ -187,10 +191,12 @@ bHvh:SetClickFunction(function()
     cheadle_api.Notification("[chat spammer] hvh_spammer timer started", Color(196, 160, 255), 5000); 
     cheadle_api.timer.Create( "hvh_spammer", sRate:GetValue(), 0, function()
         local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
-        if cOoc:GetChecked() == false then
-            RunConsoleCommand("say", spamHVH)
-        else
-            RunConsoleCommand("say", "// " .. string.sub(spamHVH, 1, 126))
+            if spamType:GetSelected() == "Normal" then
+                RunConsoleCommand("say", spamHVH)
+            elseif spamType:GetSelected() == "OOC" then
+                RunConsoleCommand("say", "// " .. string.sub(spamHVH, 1, 126)) 
+            elseif spamType:GetSelected() == "Advert" then 
+                RunConsoleCommand("say", "/advert " .. string.sub(spamHVH, 1, 119))
         end
     end)
 end)
@@ -202,10 +208,12 @@ bToxic:SetClickFunction(function()
     cheadle_api.Notification("[chat spammer] toxic_spammer timer started", Color(196, 160, 255), 5000); 
     cheadle_api.timer.Create( "toxic_spammer", sRate:GetValue(), 0, function()
         local spamToxic = TOXICTALK_CHATMESSAGES[math.random(#TOXICTALK_CHATMESSAGES)]
-        if cOoc:GetChecked() == false then
-            RunConsoleCommand("say", spamToxic)
-        else
-            RunConsoleCommand("say", "// " .. string.sub(spamToxic, 1, 126))
+            if spamType:GetSelected() == "Normal" then
+                RunConsoleCommand("say", spamToxic)
+            elseif spamType:GetSelected() == "OOC" then
+                RunConsoleCommand("say", "// " .. string.sub(spamToxic, 1, 126)) 
+            elseif spamType:GetSelected() == "Advert" then 
+                RunConsoleCommand("say", "/advert " .. string.sub(spamToxic, 1, 119))
         end
     end)
 end)
@@ -217,10 +225,12 @@ bBible:SetClickFunction(function()
     cheadle_api.Notification("[chat spammer] bible_spammer timer started", Color(196, 160, 255), 5000); 
     cheadle_api.timer.Create( "bible_spammer", sRate:GetValue(), 0, function()
         local spamBible = BIBLE_CHATMESSAGES[math.random(#BIBLE_CHATMESSAGES)]
-        if cOoc:GetChecked() == false then
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamBible)
-        else
-            RunConsoleCommand("say", "// " .. string.sub(spamBible, 1, 126))
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamBible, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamBible, 1, 119))
         end
     end)
 end)
@@ -250,10 +260,12 @@ bNewgen:SetClickFunction(function()
     cheadle_api.Notification("[chat spammer] bible_spammer timer started", Color(196, 160, 255), 5000); 
     cheadle_api.timer.Create( "newgen_spammer", sRate:GetValue(), 0, function()
         local spamNewgen = NEWGEN_CHATMESSAGES[math.random(#NEWGEN_CHATMESSAGES)]
-        if cOoc:GetChecked() == false then
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamNewgen)
-        else
-            RunConsoleCommand("say", "// " .. string.sub(spamNewgen, 1, 126))
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamNewgen, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamNewgen, 1, 119))
         end
     end)
 end)
@@ -265,10 +277,12 @@ bFournier:SetClickFunction(function()
     cheadle_api.Notification("[chat spammer] fournier_spammer timer started", Color(196, 160, 255), 5000); 
     cheadle_api.timer.Create( "fournier_spammer", sRate:GetValue(), 0, function()
         local spamFournier = RYANFOURNIER_CHATMESSAGES[math.random(#RYANFOURNIER_CHATMESSAGES)]
-        if cOoc:GetChecked() == false then
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamFournier)
-        else
-            RunConsoleCommand("say", "// " .. string.sub(spamFournier, 1, 126))
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamFournier, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamFournier, 1, 119))
         end
     end)
 end)
@@ -280,10 +294,12 @@ bFemboy:SetClickFunction(function()
     cheadle_api.Notification("[chat spammer] femboy_spammer timer started", Color(196, 160, 255), 5000); 
     cheadle_api.timer.Create( "femboy_spammer", sRate:GetValue(), 0, function()
         local spamFemboy = FEMBOY_CHATMESSAGES[math.random(#FEMBOY_CHATMESSAGES)]
-        if cOoc:GetChecked() == false then
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamFemboy)
-        else
-            RunConsoleCommand("say", "// " .. string.sub(spamFemboy, 1, 126))
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamFemboy, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamFemboy, 1, 119)) -- m-m-master~ I can't handle any m-more elseifs~
         end
     end)
 end)
@@ -295,10 +311,12 @@ bShabeel:SetClickFunction(function()
     cheadle_api.Notification("[chat spammer] shabeel_spammer timer started", Color(196, 160, 255), 5000); 
     cheadle_api.timer.Create( "shabeel_spammer", sRate:GetValue(), 0, function()
         local spamShabeel = SHABEEL_CHATMESSAGES[math.random(#SHABEEL_CHATMESSAGES)]
-        if cOoc:GetChecked() == false then
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamShabeel)
-        else
-            RunConsoleCommand("say", "// " .. string.sub(spamShabeel, 1, 126))
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamShabeel, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamShabeel, 1, 119))
         end
     end)
 end)
@@ -310,10 +328,12 @@ bMeow:SetClickFunction(function()
     cheadle_api.Notification("[chat spammer] cat_spammer timer started", Color(196, 160, 255), 5000); 
     cheadle_api.timer.Create( "cat_spammer", sRate:GetValue(), 0, function()
         local spamCat = CAT_CHATMESSAGES[math.random(#CAT_CHATMESSAGES)]
-        if cOoc:GetChecked() == false then
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamCat)
-        else
-            RunConsoleCommand("say", "// " .. string.sub(spamCat, 1, 126))
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamCat, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamCat, 1, 119))
         end
     end)
 end)
