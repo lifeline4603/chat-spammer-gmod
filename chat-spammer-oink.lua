@@ -160,6 +160,7 @@ oink.ui_button("custom spam")
 
 
 oink.ui_slider("rate (incr. 0.5)", 0.5, 5, 0.5)
+oink.ui_checkbox("OOC spam")
 
 oink.ui_button("destroy all timers")
 
@@ -167,36 +168,45 @@ oink.event_remove("view_render_post", "chatSpammerEH")
 oink.event_listen("view_render_post", "chatSpammerEH", function()
 
 local rate = oink.ui_get("chat-spammer.lua", "rate (incr. 0.5)")
+local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 
 	if oink.ui_get("chat-spammer.lua", "oink spam/advert") then
 		timer.Create( "oink_spammer", rate, 0, function()
 			local spamOink = OINK_CHATMESSAGES[math.random(#OINK_CHATMESSAGES)]
-			RunConsoleCommand("say", spamOink)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamOink)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamOink, 1, 126))
 		end)
 	end
 
 	if oink.ui_get("chat-spammer.lua", "hvh talk") then
 		timer.Create( "hvh_spammer", rate, 0, function()
 			local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
-			RunConsoleCommand("say", spamHVH)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamHVH)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamHVH, 1, 126))
 		end)
 	end
 
 	if oink.ui_get("chat-spammer.lua", "toxic talk") then
 		timer.Create( "toxic_spammer", rate, 0, function()
 			local spamToxic = TOXICTALK_CHATMESSAGES[math.random(#TOXICTALK_CHATMESSAGES)]
-			RunConsoleCommand("say", spamToxic)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamToxic)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamToxic, 1, 126))
 		end)
 	end
 
 	if oink.ui_get("chat-spammer.lua", "bible quotes") then
 		timer.Create( "bible_spammer", rate, 0, function()
 			local spamBible = BIBLE_CHATMESSAGES[math.random(#BIBLE_CHATMESSAGES)]
-			RunConsoleCommand("say", spamBible)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamBible)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamBible, 1, 126))
 		end)
 	end
 
@@ -208,48 +218,60 @@ local rate = oink.ui_get("chat-spammer.lua", "rate (incr. 0.5)")
     if oink.ui_get("chat-spammer.lua", "cheadle spam") then
 		timer.Create( "cheadle_spammer", rate, 0, function()
 			local spamCheadle = CHEADLEWARE_CHATMESSAGES[math.random(#CHEADLEWARE_CHATMESSAGES)]
-			RunConsoleCommand("say", spamCheadle)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamCheadle)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamCheadle, 1, 126))
 		end)
 	end
 
 	if oink.ui_get("chat-spammer.lua", "newgen spam") then
 		timer.Create( "newgen_spammer", rate, 0, function()
 			local spamNewgen = NEWGEN_CHATMESSAGES[math.random(#NEWGEN_CHATMESSAGES)]
-			RunConsoleCommand("say", spamNewgen)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamNewgen)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamNewgen, 1, 126))
 		end)
 	end
 
 	if oink.ui_get("chat-spammer.lua", "ryan fournier spam") then
 		timer.Create( "fournier_spammer", rate, 0, function()
 			local spamFournier = RYANFOURNIER_CHATMESSAGES[math.random(#RYANFOURNIER_CHATMESSAGES)]
-			RunConsoleCommand("say", spamFournier)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamFournier)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamFournier, 1, 126))
 		end)
 	end
 
 	if oink.ui_get("chat-spammer.lua", "femboy spam (extreme nsfw)") then
 		timer.Create( "femboy_spammer", rate, 0, function()
 			local spamFemboy = FEMBOY_CHATMESSAGES[math.random(#FEMBOY_CHATMESSAGES)]
-			RunConsoleCommand("say", spamFemboy)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamFemboy)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamFemboy, 1, 126))
 		end)
 	end
 
 	if oink.ui_get("chat-spammer.lua", "shabeel spam") then
 		timer.Create( "shabeel_spammer", rate, 0, function()
 			local spamShabeel = SHABEEL_CHATMESSAGES[math.random(#SHABEEL_CHATMESSAGES)]
-			RunConsoleCommand("say", spamShabeel)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamShabeel)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamShabeel, 1, 126))
 		end)
 	end
 
 	if oink.ui_get("chat-spammer.lua", "cat spam") then
 		timer.Create( "cat_spammer", rate, 0, function()
 			local spamCat = CAT_CHATMESSAGES[math.random(#CAT_CHATMESSAGES)]
-			RunConsoleCommand("say", spamCat)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamCat)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamCat, 1, 126))
 		end)
 	end
 
@@ -257,8 +279,10 @@ local rate = oink.ui_get("chat-spammer.lua", "rate (incr. 0.5)")
 		oink.log(0x00FFFF00, "replace anything in the CUSTOM_CHATMESSAGES table within the code!")
 		timer.Create( "custom_spammer", rate, 0, function()
 			local spamCustom = CUSTOM_CHATMESSAGES[math.random(#CUSTOM_CHATMESSAGES)]
-			RunConsoleCommand("say", spamCustom)
-			
+			if oocSpam == false then
+				RunConsoleCommand("say", spamCustom)
+			else
+				RunConsoleCommand("say", "// " .. string.sub(spamCustom, 1, 126))
 		end)
 	end
 
