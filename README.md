@@ -7,3 +7,5 @@ todo:
 - advert integration
 - ~~secret spam~~ for cheadle and oink
 - maybe a small effect or animation for yk
+
+edit: so for some reason vscode is making my commits "Your a authored" so just act like they are "retree1 authored"
