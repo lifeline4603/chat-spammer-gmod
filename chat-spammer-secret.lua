@@ -132,7 +132,6 @@ local SECRET_CHATMESSAGES = {
 	"SecretService.club owns you!!",
 	"SecretService.club owns me!! UwU",
 	"SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club",
-	[["YO WHAT CHEAT IS THAT WHAT CHEAT" SECRETSERVICE.CLUB ON TOPPPP]],
 	"SecretService.club > any cheat",
 	"1v1 me bro, SecretService.club on TOPP!!!",
 	"YOU WISH YOU HAVE SECRETSERVICE.CLUB",
