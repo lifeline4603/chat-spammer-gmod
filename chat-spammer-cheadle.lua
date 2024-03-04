@@ -132,7 +132,7 @@ end)
                         cheadle_api.Notification("[evil chat spammer] raping computer in 1", Color(196, 160, 255), 1000)
                         cheadle_api.timer.Simple(0.4, function()
                             cheadle_api.PlaySound("br_mock01.wav") -- Are you still with us, Dr. Freeman? Not for much longer, I think.
-                            cheadle_api.timer.Simple(5.5, function()
+                            cheadle_api.timer.Simple(5.1, function()
                                 cheadle_api.timer.Create("crash_1", 0.05, 20, function()
                                 cheadle_api.Notification("[evil chat spammer] CHEADLEWARE.NET ON TOP!!!!", Color(196, 160, 255), 10000)
                             end)
