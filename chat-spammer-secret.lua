@@ -137,7 +137,7 @@ local SECRET_CHATMESSAGES = {
 	"1v1 me bro, SecretService.club on TOPP!!!",
 	"YOU WISH YOU HAVE SECRETSERVICE.CLUB",
 	"https://imgur.com/a/qZrfSrO SECRETSERVICE.CLUB OWNS YOU!!!",
-	"LSAC? ROTAC? never heard of it, SECRETSERVICE.CLUB ON TOP!!"
+	"LSAC? ROTAC? never heard of it, SECRETSERVICE.CLUB ON TOP!!",
 	"hitting this secretservice.club OG joint"
 }
 
