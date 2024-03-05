@@ -20,7 +20,7 @@ local HVHTALK_CHATMESSAGES = {
 	"using idiotbox?",
 	"is ur nospread and norecoil working???",
 	"nice aa retard lmao",
-	"DID YOU SEE THAT BACKTRACK RIGHT THERE???"
+	"DID YOU SEE THAT BACKTRACK RIGHT THERE???",
 	"oink.industries > your cheat"
 }
 
