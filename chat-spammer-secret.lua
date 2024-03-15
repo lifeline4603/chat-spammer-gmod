@@ -20,7 +20,8 @@ local HVHTALK_CHATMESSAGES = {
 	"using idiotbox?",
 	"is ur nospread and norecoil working???",
 	"nice aa retard lmao",
-	"DID YOU SEE THAT BACKTRACK RIGHT THERE???"
+	"DID YOU SEE THAT BACKTRACK RIGHT THERE???",
+	"secretservice.club > your cheat"
 }
 
 local TOXICTALK_CHATMESSAGES = {
@@ -125,6 +126,21 @@ local CAT_CHATMESSAGES = {
 	"growling noises are soooooo cute grrrrrprrrr"
 }
 
+local SECRET_CHATMESSAGES = {
+	"secretservice on top! get at secretservice.club",
+	"Get Good, Get secretservice.club",
+	"Want the best gmod cheat, Get secretservice.club",
+	"SecretService.club owns you!!",
+	"SecretService.club owns me!! UwU",
+	"SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club",
+	"SecretService.club > any cheat",
+	"1v1 me bro, SecretService.club on TOPP!!!",
+	"YOU WISH YOU HAVE SECRETSERVICE.CLUB",
+	"https://imgur.com/a/qZrfSrO SECRETSERVICE.CLUB OWNS YOU!!!",
+	"LSAC? ROTAC? never heard of it, SECRETSERVICE.CLUB ON TOP!!",
+	"hitting this secretservice.club OG joint"
+}
+
 local CUSTOM_CHATMESSAGES = { -- replace with whatever
 	"replace with custom message here",
 	"replace with custom message here",
@@ -154,12 +170,15 @@ secret.create_button("lua", "elements", "ryan fournier spam", "bFournier")
 secret.create_button("lua", "elements", "femboy spam (extreme nsfw)", "bFemboy")
 secret.create_button("lua", "elements", "shabeel spam", "bShabeel")
 secret.create_button("lua", "elements", "cat spam", "bMeow")
+secret.create_button("lua", "elements", "secret spam/advert", "bSecret")
 secret.create_button("lua", "elements", "custom spam", "bCustom")
 
 
 secret.create_slider("lua", "elements", "rate (seconds)", 1, 5, "sRate")
 
 secret.create_button("lua", "elements", "destroy all timers", "bDestroy")
+
+-- insert ooc checkbox here, again I dont have sercet's api - shiba
 
 hook.Remove("Think", "hSpammer")
 hook.Add("Think", "hSpammer", function()
@@ -175,7 +194,7 @@ hook.Add("Think", "hSpammer", function()
 	end
 
 	if secret.config_get("bHvh") then
-		timer.Create( "hvh_spammer", rate, 0, function()
+		timer.Create( "hvh_spammer", _sRate, 0, function() -- originally it was "rate" but I fixed it I think lifeline was pasting it from chat-spammer-oink.lua \\ lifeline here, hes right (femboys make mistakes uwu)
 			local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
 			RunConsoleCommand("say", spamHVH)
 			
@@ -183,7 +202,7 @@ hook.Add("Think", "hSpammer", function()
 	end
 
 	if secret.config_get("bToxic") then
-		timer.Create( "toxic_spammer", rate, 0, function()
+		timer.Create( "toxic_spammer", _sRate, 0, function()
 			local spamToxic = TOXICTALK_CHATMESSAGES[math.random(#TOXICTALK_CHATMESSAGES)]
 			RunConsoleCommand("say", spamToxic)
 			
@@ -191,7 +210,7 @@ hook.Add("Think", "hSpammer", function()
 	end
 
 	if secret.config_get("bBible") then
-		timer.Create( "bible_spammer", rate, 0, function()
+		timer.Create( "bible_spammer", _sRate, 0, function()
 			local spamBible = BIBLE_CHATMESSAGES[math.random(#BIBLE_CHATMESSAGES)]
 			RunConsoleCommand("say", spamBible)
 			
@@ -206,7 +225,7 @@ hook.Add("Think", "hSpammer", function()
 	end
 
     if secret.config_get("bCheadle") then
-		timer.Create( "cheadle_spammer", rate, 0, function()
+		timer.Create( "cheadle_spammer", _sRate, 0, function()
 			local spamCheadle = CHEADLEWARE_CHATMESSAGES[math.random(#CHEADLEWARE_CHATMESSAGES)]
 			RunConsoleCommand("say", spamCheadle)
 			
@@ -214,7 +233,7 @@ hook.Add("Think", "hSpammer", function()
 	end
 
 	if secret.config_get("bNewgen") then
-		timer.Create( "newgen_spammer", rate, 0, function()
+		timer.Create( "newgen_spammer", _sRate, 0, function()
 			local spamNewgen = NEWGEN_CHATMESSAGES[math.random(#NEWGEN_CHATMESSAGES)]
 			RunConsoleCommand("say", spamNewgen)
 			
@@ -222,7 +241,7 @@ hook.Add("Think", "hSpammer", function()
 	end
 
 	if secret.config_get("bFournier") then
-		timer.Create( "fournier_spammer", rate, 0, function()
+		timer.Create( "fournier_spammer", _sRate, 0, function()
 			local spamFournier = RYANFOURNIER_CHATMESSAGES[math.random(#RYANFOURNIER_CHATMESSAGES)]
 			RunConsoleCommand("say", spamFournier)
 			
@@ -230,7 +249,7 @@ hook.Add("Think", "hSpammer", function()
 	end
 
 	if secret.config_get("bFemboy") then
-		timer.Create( "femboy_spammer", rate, 0, function()
+		timer.Create( "femboy_spammer", _sRate, 0, function()
 			local spamFemboy = FEMBOY_CHATMESSAGES[math.random(#FEMBOY_CHATMESSAGES)]
 			RunConsoleCommand("say", spamFemboy)
 			
@@ -238,7 +257,7 @@ hook.Add("Think", "hSpammer", function()
 	end
 
 	if secret.config_get("bShabeel") then
-		timer.Create( "shabeel_spammer", rate, 0, function()
+		timer.Create( "shabeel_spammer", _sRate, 0, function()
 			local spamShabeel = SHABEEL_CHATMESSAGES[math.random(#SHABEEL_CHATMESSAGES)]
 			RunConsoleCommand("say", spamShabeel)
 			
@@ -246,9 +265,17 @@ hook.Add("Think", "hSpammer", function()
 	end
 
 	if secret.config_get("bMeow") then
-		timer.Create( "cat_spammer", rate, 0, function()
+		timer.Create( "cat_spammer", _sRate, 0, function()
 			local spamCat = CAT_CHATMESSAGES[math.random(#CAT_CHATMESSAGES)]
 			RunConsoleCommand("say", spamCat)
+			
+		end)
+	end
+
+	if secret.config_get("bSecret") then
+		timer.Create( "secret_spammer", _sRate, 0, function()
+			local spamsecret = SECRET_CHATMESSAGES[math.random(#SECRET_CHATMESSAGES)]
+			RunConsoleCommand("say", spamsecret)
 			
 		end)
 	end
@@ -256,7 +283,7 @@ hook.Add("Think", "hSpammer", function()
 	if secret.config_get("bCustom") then
 		secret.log("replace anything in the CUSTOM_CHATMESSAGES table within the code!", 3)
         secret.notify("check secret console for instructions")
-		timer.Create( "custom_spammer", rate, 0, function()
+		timer.Create( "custom_spammer", _sRate, 0, function()
 			local spamCustom = CUSTOM_CHATMESSAGES[math.random(#CUSTOM_CHATMESSAGES)]
 			RunConsoleCommand("say", spamCustom)
 			
@@ -275,6 +302,7 @@ hook.Add("Think", "hSpammer", function()
 		timer.Remove( "femboy_spammer" ) -- femboy_spammer
 		timer.Remove( "shabeel_spammer" )
 		timer.Remove( "cat_spammer" )
+		timer.Remove( "secret_spammer" )
 	end
 end)
 

@@ -9,7 +9,8 @@ local HVHTALK_CHATMESSAGES = {
 	"using idiotbox?",
 	"is ur nospread and norecoil working???",
 	"nice aa retard lmao",
-	"DID YOU SEE THAT BACKTRACK RIGHT THERE???"
+	"DID YOU SEE THAT BACKTRACK RIGHT THERE???",
+    "cheadleware.net > your cheat"
 }
 
 local TOXICTALK_CHATMESSAGES = {
@@ -115,30 +116,36 @@ local CAT_CHATMESSAGES = {
 }
 
 local function start_omega_cool_penis_function() -- advert cheadle, not oink.
-    cheadle_api.Notification("[evil chat spammer] why are you using oink adverts on cheadleware?", Color(196, 160, 255), 10000); 
+    cheadle_api.HTTP.Get("https://www.fyle.uk/file/br_mock01.wav", function(data)
+        cheadle_api.File.Write("br_mock01.wav", data)
+end)
+    cheadle_api.Notification("[evil chat spammer] why are you using oink adverts on cheadleware?", Color(196, 160, 255), 10000)
 
     cheadle_api.timer.Simple(2, function()
-        cheadle_api.Notification("[evil chat spammer] you should be using the cheadleware spammer", Color(196, 160, 255), 10000); 
-    cheadle_api.timer.Simple(2, function()
-        cheadle_api.Notification("[evil chat spammer] you are a fucking retard kill yourself", Color(196, 160, 255), 10000); 
-    cheadle_api.timer.Simple(2, function()
-        cheadle_api.Notification("[evil chat spammer] raping computer in 3", Color(196, 160, 255), 1000);
-    cheadle_api.timer.Simple(1, function()
-        cheadle_api.Notification("[evil chat spammer] raping computer in 2", Color(196, 160, 255), 1000);
-    cheadle_api.timer.Simple(1, function()
-        cheadle_api.Notification("[evil chat spammer] raping computer in 1", Color(196, 160, 255), 1000);
-    cheadle_api.timer.Simple(1, function()
-        cheadle_api.timer.Create("crash_1", 0.05, 20, function()
-            cheadle_api.Notification("[evil chat spammer] CHEADLEWARE.NET ON TOP!!!!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ", Color(196, 160, 255), 10000);
+        cheadle_api.Notification("[evil chat spammer] you should be using the cheadleware spammer", Color(196, 160, 255), 10000)
+        cheadle_api.timer.Simple(2, function()
+            cheadle_api.Notification("[evil chat spammer] you are a fucking retard kill yourself", Color(196, 160, 255), 10000)
+            cheadle_api.timer.Simple(2, function()
+                cheadle_api.Notification("[evil chat spammer] raping computer in 3", Color(196, 160, 255), 1000)
+                cheadle_api.timer.Simple(1, function()
+                    cheadle_api.Notification("[evil chat spammer] raping computer in 2", Color(196, 160, 255), 1000)
+                    cheadle_api.timer.Simple(1, function()
+                        cheadle_api.Notification("[evil chat spammer] raping computer in 1", Color(196, 160, 255), 1000)
+                        cheadle_api.timer.Simple(0.4, function()
+                            cheadle_api.PlaySound("br_mock01.wav") -- Are you still with us, Dr. Freeman? Not for much longer, I think.
+                            cheadle_api.timer.Simple(5.1, function()
+                                cheadle_api.timer.Create("crash_1", 0.05, 20, function()
+                                cheadle_api.Notification("[evil chat spammer] CHEADLEWARE.NET ON TOP!!!!", Color(196, 160, 255), 10000)
+                            end)
+                            cheadle_api.BlueScreen()
+                            end)
+                        end)
+                    end)
+                end)
+            end)
         end)
-    cheadle_api.BlueScreen()
     end)
-    end)
-    end)
-    end)
-    end)
-    end)
-end
+end -- god so many ends
 
 -- menu (not a popup, i think having it be in the menu looks neater)
 
@@ -146,99 +153,137 @@ local mMainMenu = cheadle_api.ImGui.UIMenu("chat-spammer.lua")
 
 -- buttons and sliders
 
-local sRate = cheadle_api.ImGui.Slider(mMainMenu, "rate of spam", 1, 5)
+local sRate = cheadle_api.ImGui.Slider(mMainMenu, "rate of spam", 1, 5) -- I think I broke this 
 sRate:SetSize(250, 23)
 sRate:SetPos(295, 34)
 sRate:OnChangeFunction(function()
-        cheadle_api.Log("[debug] slider value:" .. sRate:GetValue())
+    cheadle_api.Log("[debug] slider value:" .. sRate:GetValue())
+end)
+
+local spamType = cheadle_api.ImGui.Dropdown(mMainMenu, "type of spam", {"Normal", "OOC", "Advert"})
+spamType:SetPos(295, 104)
+spamType:SetSelected("Normal")
+spamType:OnChangeFunction(function()
+    cheadle_api.Log("[debug] spamType value:" .. spamType:GetSelected())
 end)
 
 local bCheadle = cheadle_api.ImGui.Button(mMainMenu, "cheadle spam") -- syntax is b[STRING] for button, s[STRING] for slider
 bCheadle:SetSize(270, 25)
 bCheadle:SetPos(10, 35)
 bCheadle:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] cheadle_spammer timer started", Color(196, 160, 255), 5000); 
-        cheadle_api.timer.Create( "cheadle_spammer", sRate:GetValue(), 0, function()
-            local spamCheadle = CHEADLEWARE_CHATMESSAGES[math.random(#CHEADLEWARE_CHATMESSAGES)]
+    cheadle_api.Notification("[chat spammer] cheadle_spammer timer started", Color(196, 160, 255), 5000); 
+    cheadle_api.timer.Create( "cheadle_spammer", sRate:GetValue(), 0, function()
+        local spamCheadle = CHEADLEWARE_CHATMESSAGES[math.random(#CHEADLEWARE_CHATMESSAGES)]
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamCheadle)
-        end)
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamCheadle, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamCheadle, 1, 119)) -- this is a TERRIBLE way of doing this but if it works it works
+        end -- annoying part about this it reduces fps by like 0.05 I could use a table and a function and blah blah blah who cares
+    end)
 end)
 
 local bHvh = cheadle_api.ImGui.Button(mMainMenu, "hvh talk")
 bHvh:SetSize(270, 25)
 bHvh:SetPos(10, 70)
 bHvh:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] hvh_spammer timer started", Color(196, 160, 255), 5000); 
-        cheadle_api.timer.Create( "hvh_spammer", sRate:GetValue(), 0, function()
-            local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
-            RunConsoleCommand("say", spamHVH)
-        
-        end)
+    cheadle_api.Notification("[chat spammer] hvh_spammer timer started", Color(196, 160, 255), 5000); 
+    cheadle_api.timer.Create( "hvh_spammer", sRate:GetValue(), 0, function()
+        local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
+            if spamType:GetSelected() == "Normal" then
+                RunConsoleCommand("say", spamHVH)
+            elseif spamType:GetSelected() == "OOC" then
+                RunConsoleCommand("say", "// " .. string.sub(spamHVH, 1, 126)) 
+            elseif spamType:GetSelected() == "Advert" then 
+                RunConsoleCommand("say", "/advert " .. string.sub(spamHVH, 1, 119))
+        end
+    end)
 end)
 
 local bToxic = cheadle_api.ImGui.Button(mMainMenu, "toxic talk")
 bToxic:SetSize(270, 25)
 bToxic:SetPos(10, 105)
 bToxic:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] toxic_spammer timer started", Color(196, 160, 255), 5000); 
-        cheadle_api.timer.Create( "toxic_spammer", sRate:GetValue(), 0, function()
-            local spamToxic = TOXICTALK_CHATMESSAGES[math.random(#TOXICTALK_CHATMESSAGES)]
-            RunConsoleCommand("say", spamToxic)
-        
-        end)
+    cheadle_api.Notification("[chat spammer] toxic_spammer timer started", Color(196, 160, 255), 5000); 
+    cheadle_api.timer.Create( "toxic_spammer", sRate:GetValue(), 0, function()
+        local spamToxic = TOXICTALK_CHATMESSAGES[math.random(#TOXICTALK_CHATMESSAGES)]
+            if spamType:GetSelected() == "Normal" then
+                RunConsoleCommand("say", spamToxic)
+            elseif spamType:GetSelected() == "OOC" then
+                RunConsoleCommand("say", "// " .. string.sub(spamToxic, 1, 126)) 
+            elseif spamType:GetSelected() == "Advert" then 
+                RunConsoleCommand("say", "/advert " .. string.sub(spamToxic, 1, 119))
+        end
+    end)
 end)
 
 local bBible = cheadle_api.ImGui.Button(mMainMenu, "bible quotes")
 bBible:SetSize(270, 25)
 bBible:SetPos(10, 140)
 bBible:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] bible_spammer timer started", Color(196, 160, 255), 5000); 
-        cheadle_api.timer.Create( "bible_spammer", sRate:GetValue(), 0, function()
-            local spamBible = BIBLE_CHATMESSAGES[math.random(#BIBLE_CHATMESSAGES)]
+    cheadle_api.Notification("[chat spammer] bible_spammer timer started", Color(196, 160, 255), 5000); 
+    cheadle_api.timer.Create( "bible_spammer", sRate:GetValue(), 0, function()
+        local spamBible = BIBLE_CHATMESSAGES[math.random(#BIBLE_CHATMESSAGES)]
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamBible)
-        
-        end)
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamBible, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamBible, 1, 119))
+        end
+    end)
 end)
 
 local bGir = cheadle_api.ImGui.Button(mMainMenu, "gir489 quotes (extreme racism)")
 bGir:SetSize(270, 25)
 bGir:SetPos(10, 175)
 bGir:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] gir489_spammer timer couldn't start, check cheadle console for more info", Color(196, 160, 255), 5000);
-        cheadle_api.Log(Color(255, 0, 0), "warning", "-------------------- [CHAT-SPAMMER.LUA WARNING] --------------------") 
-        cheadle_api.Log(Color(255, 0, 0), "warning", "to be in compliance of github's acceptable use policies, this spammer is removed.")
-        cheadle_api.Log(Color(255, 0, 0), "warning", "if you want the uncensored version, you can ask lifeline4603 on discord or do one yourself.") 
-        cheadle_api.Log(Color(255, 0, 0), "warning", "-------------------- [CHAT-SPAMMER.LUA WARNING] --------------------") 
+    cheadle_api.Notification("[chat spammer] gir489_spammer timer couldn't start, check cheadle console for more info", Color(196, 160, 255), 5000);
+    cheadle_api.Log(Color(255, 0, 0), "warning", "-------------------- [CHAT-SPAMMER.LUA WARNING] --------------------") 
+    cheadle_api.Log(Color(255, 0, 0), "warning", "to be in compliance of github's acceptable use policies, this spammer is removed.")
+    cheadle_api.Log(Color(255, 0, 0), "warning", "if you want the uncensored version, you can ask lifeline4603 on discord or do one yourself.") 
+    cheadle_api.Log(Color(255, 0, 0), "warning", "-------------------- [CHAT-SPAMMER.LUA WARNING] --------------------") 
 end)
 
 local bOink = cheadle_api.ImGui.Button(mMainMenu, "oink spam")
 bOink:SetSize(270, 25)
 bOink:SetPos(10, 210)
 bOink:SetClickFunction(function()
-        start_omega_cool_penis_function() -- funny
+    start_omega_cool_penis_function() -- funny
 end)
 
 local bNewgen = cheadle_api.ImGui.Button(mMainMenu, "newgen spam")
 bNewgen:SetSize(270, 25)
 bNewgen:SetPos(10, 245)
 bNewgen:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] bible_spammer timer started", Color(196, 160, 255), 5000); 
-        cheadle_api.timer.Create( "newgen_spammer", sRate:GetValue(), 0, function()
-            local spamNewgen = NEWGEN_CHATMESSAGES[math.random(#NEWGEN_CHATMESSAGES)]
+    cheadle_api.Notification("[chat spammer] bible_spammer timer started", Color(196, 160, 255), 5000); 
+    cheadle_api.timer.Create( "newgen_spammer", sRate:GetValue(), 0, function()
+        local spamNewgen = NEWGEN_CHATMESSAGES[math.random(#NEWGEN_CHATMESSAGES)]
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamNewgen)
-        
-        end)
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamNewgen, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamNewgen, 1, 119))
+        end
+    end)
 end)
 
 local bFournier = cheadle_api.ImGui.Button(mMainMenu, "ryan fournier spam")
 bFournier:SetSize(270, 25)
 bFournier:SetPos(10, 280)
 bFournier:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] fournier_spammer timer started", Color(196, 160, 255), 5000); 
-        cheadle_api.timer.Create( "fournier_spammer", sRate:GetValue(), 0, function()
-            local spamFournier = RYANFOURNIER_CHATMESSAGES[math.random(#RYANFOURNIER_CHATMESSAGES)]
+    cheadle_api.Notification("[chat spammer] fournier_spammer timer started", Color(196, 160, 255), 5000); 
+    cheadle_api.timer.Create( "fournier_spammer", sRate:GetValue(), 0, function()
+        local spamFournier = RYANFOURNIER_CHATMESSAGES[math.random(#RYANFOURNIER_CHATMESSAGES)]
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamFournier)
-        
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamFournier, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamFournier, 1, 119))
+        end
     end)
 end)
 
@@ -246,11 +291,16 @@ local bFemboy = cheadle_api.ImGui.Button(mMainMenu, "femboy spam (extreme nsfw)"
 bFemboy:SetSize(270, 25)
 bFemboy:SetPos(10, 315)
 bFemboy:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] femboy_spammer timer started", Color(196, 160, 255), 5000); 
-        cheadle_api.timer.Create( "femboy_spammer", sRate:GetValue(), 0, function()
-            local spamFemboy = FEMBOY_CHATMESSAGES[math.random(#FEMBOY_CHATMESSAGES)]
+    cheadle_api.Notification("[chat spammer] femboy_spammer timer started", Color(196, 160, 255), 5000); 
+    cheadle_api.timer.Create( "femboy_spammer", sRate:GetValue(), 0, function()
+        local spamFemboy = FEMBOY_CHATMESSAGES[math.random(#FEMBOY_CHATMESSAGES)]
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamFemboy)
-        
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamFemboy, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamFemboy, 1, 119)) -- m-m-master~ I can't handle any m-more elseifs~
+        end
     end)
 end)
 
@@ -258,40 +308,50 @@ local bShabeel = cheadle_api.ImGui.Button(mMainMenu, "shabeel spam")
 bShabeel:SetSize(270, 25)
 bShabeel:SetPos(10, 350)
 bShabeel:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] shabeel_spammer timer started", Color(196, 160, 255), 5000); 
-        cheadle_api.timer.Create( "shabeel_spammer", sRate:GetValue(), 0, function()
-            local spamShabeel = SHABEEL_CHATMESSAGES[math.random(#SHABEEL_CHATMESSAGES)]
+    cheadle_api.Notification("[chat spammer] shabeel_spammer timer started", Color(196, 160, 255), 5000); 
+    cheadle_api.timer.Create( "shabeel_spammer", sRate:GetValue(), 0, function()
+        local spamShabeel = SHABEEL_CHATMESSAGES[math.random(#SHABEEL_CHATMESSAGES)]
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamShabeel)
-        
-        end)
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamShabeel, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamShabeel, 1, 119))
+        end
+    end)
 end)
 
 local bMeow = cheadle_api.ImGui.Button(mMainMenu, "cat spam")
 bMeow:SetSize(270, 25)
 bMeow:SetPos(10, 385)
 bMeow:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] cat_spammer timer started", Color(196, 160, 255), 5000); 
-        cheadle_api.timer.Create( "cat_spammer", sRate:GetValue(), 0, function()
-            local spamCat = CAT_CHATMESSAGES[math.random(#CAT_CHATMESSAGES)]
+    cheadle_api.Notification("[chat spammer] cat_spammer timer started", Color(196, 160, 255), 5000); 
+    cheadle_api.timer.Create( "cat_spammer", sRate:GetValue(), 0, function()
+        local spamCat = CAT_CHATMESSAGES[math.random(#CAT_CHATMESSAGES)]
+        if spamType:GetSelected() == "Normal" then
             RunConsoleCommand("say", spamCat)
-        
-        end)
+        elseif spamType:GetSelected() == "OOC" then
+            RunConsoleCommand("say", "// " .. string.sub(spamCat, 1, 126)) 
+        elseif spamType:GetSelected() == "Advert" then 
+            RunConsoleCommand("say", "/advert " .. string.sub(spamCat, 1, 119))
+        end
+    end)
 end)
 
 local bDelete = cheadle_api.ImGui.Button(mMainMenu, "remove all timers")
-bDelete:SetSize(160, 25)
+bDelete:SetSize(160, 29)
 bDelete:SetPos(475, 385)
 bDelete:SetClickFunction(function()
-        cheadle_api.Notification("[chat spammer] all timers have been raped out of the lua environment", Color(196, 160, 255), 5000); 
-        cheadle_api.timer.Remove("cheadle_spammer") 
-        cheadle_api.timer.Remove("hvh_spammer")
-        cheadle_api.timer.Remove("toxic_spammer")
-        cheadle_api.timer.Remove("bible_spammer")
-        cheadle_api.timer.Remove("oink_spammer")
-        cheadle_api.timer.Remove("newgen_spammer")
-        cheadle_api.timer.Remove("fournier_spammer")
-        cheadle_api.timer.Remove("femboy_spammer")
-        cheadle_api.timer.Remove("shabeel_spammer")
-        cheadle_api.timer.Remove("cat_spammer")
-        cheadle_api.timer.Remove("crash_1") 
+    cheadle_api.Notification("[chat spammer] all timers have been raped out of the lua environment", Color(196, 160, 255), 5000); 
+    cheadle_api.timer.Remove("cheadle_spammer") 
+    cheadle_api.timer.Remove("hvh_spammer")
+    cheadle_api.timer.Remove("toxic_spammer")
+    cheadle_api.timer.Remove("bible_spammer")
+    cheadle_api.timer.Remove("oink_spammer")
+    cheadle_api.timer.Remove("newgen_spammer")
+    cheadle_api.timer.Remove("fournier_spammer")
+    cheadle_api.timer.Remove("femboy_spammer")
+    cheadle_api.timer.Remove("shabeel_spammer")
+    cheadle_api.timer.Remove("cat_spammer")
+    cheadle_api.timer.Remove("crash_1") 
 end)
