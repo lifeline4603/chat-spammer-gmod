@@ -194,7 +194,7 @@ hook.Add("Think", "hSpammer", function()
 	end
 
 	if secret.config_get("bHvh") then
-		timer.Create( "hvh_spammer", _sRate, 0, function() -- originally it was "rate" but I fixed it I think lifeline was pasting it from chat-spammer-oink.lua 
+		timer.Create( "hvh_spammer", _sRate, 0, function() -- originally it was "rate" but I fixed it I think lifeline was pasting it from chat-spammer-oink.lua \\ lifeline here, hes right (femboys make mistakes uwu)
 			local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
 			RunConsoleCommand("say", spamHVH)
 			
