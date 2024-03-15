@@ -3,6 +3,7 @@ an up to date chat spammer with frequent updates for 3 different cheats (oink.in
 
 todo:
 - global chat spammer
+- ulx psay/asay support
 - ooc integration for secret
 - advert integration for oink and secret
 - ~~secret spam~~
