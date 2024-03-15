@@ -161,7 +161,7 @@ sRate:OnChangeFunction(function()
 end)
 
 local spamType = cheadle_api.ImGui.Dropdown(mMainMenu, "type of spam", {"Normal", "OOC", "Advert"})
-spamType:SetPos(295, 100)
+spamType:SetPos(295, 104)
 spamType:SetSelected("Normal")
 spamType:OnChangeFunction(function()
     cheadle_api.Log("[debug] spamType value:" .. spamType:GetSelected())
