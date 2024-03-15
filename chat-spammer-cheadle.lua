@@ -161,7 +161,7 @@ sRate:OnChangeFunction(function()
     cheadle_api.Log("[debug] slider value:" .. sRate:GetValue())
 end)
 
-local spamType = cheadle_api.ImGui.Dropdown(mMainMenu, "type of spam", {"Normal", "OOC", "Advert"})
+local spamType = cheadle_api.ImGui.Dropdown(mMainMenu, "type of spam", {"Normal", "OOC", "Advert", "Asay"})
 spamType:SetPos(295, 104)
 spamType:SetSelected("Normal")
 spamType:OnChangeFunction(function()
@@ -181,7 +181,9 @@ bCheadle:SetClickFunction(function()
             RunConsoleCommand("say", "// " .. string.sub(spamCheadle, 1, 126)) 
         elseif spamType:GetSelected() == "Advert" then 
             RunConsoleCommand("say", "/advert " .. string.sub(spamCheadle, 1, 119)) -- this is a TERRIBLE way of doing this but if it works it works
-        end -- annoying part about this it reduces fps by like 0.05 I could use a table and a function and blah blah blah who cares
+        elseif spamType:GetSelected() == "Asay" then -- annoying part about this it reduces fps by like 0.05 I could use a table and a function and blah blah blah who cares
+            RunConsoleCommand("ulx", "asay", string.sub(spamCheadle, 1, 126))
+        end
     end)
 end)
 
@@ -198,6 +200,8 @@ bHvh:SetClickFunction(function()
                 RunConsoleCommand("say", "// " .. string.sub(spamHVH, 1, 126)) 
             elseif spamType:GetSelected() == "Advert" then 
                 RunConsoleCommand("say", "/advert " .. string.sub(spamHVH, 1, 119))
+            elseif spamType:GetSelected() == "Asay" then
+                RunConsoleCommand("ulx", "asay", string.sub(spamHVH, 1, 126))
         end
     end)
 end)
@@ -215,6 +219,8 @@ bToxic:SetClickFunction(function()
                 RunConsoleCommand("say", "// " .. string.sub(spamToxic, 1, 126)) 
             elseif spamType:GetSelected() == "Advert" then 
                 RunConsoleCommand("say", "/advert " .. string.sub(spamToxic, 1, 119))
+            elseif spamType:GetSelected() == "Asay" then
+                RunConsoleCommand("ulx", "asay", string.sub(spamToxic, 1, 126))
         end
     end)
 end)
@@ -232,6 +238,8 @@ bBible:SetClickFunction(function()
             RunConsoleCommand("say", "// " .. string.sub(spamBible, 1, 126)) 
         elseif spamType:GetSelected() == "Advert" then 
             RunConsoleCommand("say", "/advert " .. string.sub(spamBible, 1, 119))
+        elseif spamType:GetSelected() == "Asay" then
+            RunConsoleCommand("ulx", "asay", string.sub(spamBible, 1, 126))
         end
     end)
 end)
@@ -267,6 +275,8 @@ bNewgen:SetClickFunction(function()
             RunConsoleCommand("say", "// " .. string.sub(spamNewgen, 1, 126)) 
         elseif spamType:GetSelected() == "Advert" then 
             RunConsoleCommand("say", "/advert " .. string.sub(spamNewgen, 1, 119))
+        elseif spamType:GetSelected() == "Asay" then
+            RunConsoleCommand("ulx", "asay", string.sub(spamNewgen, 1, 126))
         end
     end)
 end)
@@ -284,6 +294,8 @@ bFournier:SetClickFunction(function()
             RunConsoleCommand("say", "// " .. string.sub(spamFournier, 1, 126)) 
         elseif spamType:GetSelected() == "Advert" then 
             RunConsoleCommand("say", "/advert " .. string.sub(spamFournier, 1, 119))
+        elseif spamType:GetSelected() == "Asay" then
+            RunConsoleCommand("ulx", "asay", string.sub(spamFournier, 1, 126))
         end
     end)
 end)
@@ -301,6 +313,8 @@ bFemboy:SetClickFunction(function()
             RunConsoleCommand("say", "// " .. string.sub(spamFemboy, 1, 126)) 
         elseif spamType:GetSelected() == "Advert" then 
             RunConsoleCommand("say", "/advert " .. string.sub(spamFemboy, 1, 119)) -- m-m-master~ I can't handle any m-more elseifs~
+        elseif spamType:GetSelected() == "Asay" then
+            RunConsoleCommand("ulx", "asay", string.sub(spamFemboy, 1, 126))
         end
     end)
 end)
@@ -318,6 +332,8 @@ bShabeel:SetClickFunction(function()
             RunConsoleCommand("say", "// " .. string.sub(spamShabeel, 1, 126)) 
         elseif spamType:GetSelected() == "Advert" then 
             RunConsoleCommand("say", "/advert " .. string.sub(spamShabeel, 1, 119))
+        elseif spamType:GetSelected() == "Asay" then
+            RunConsoleCommand("ulx", "asay", string.sub(spamShabeel, 1, 126))
         end
     end)
 end)
@@ -335,6 +351,8 @@ bMeow:SetClickFunction(function()
             RunConsoleCommand("say", "// " .. string.sub(spamCat, 1, 126)) 
         elseif spamType:GetSelected() == "Advert" then 
             RunConsoleCommand("say", "/advert " .. string.sub(spamCat, 1, 119))
+        elseif spamType:GetSelected() == "Asay" then
+            RunConsoleCommand("ulx", "asay", string.sub(spamCat, 1, 126))
         end
     end)
 end)
