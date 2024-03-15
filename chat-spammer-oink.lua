@@ -1,4 +1,5 @@
 -- messages
+-- TABLES: OINK_CHATMESSAGES, HVHTALK_CHATMESSAGES, TOXICTALK_CHATMESSAGES, BIBLE_CHATMESSAGES, CHEADLEWARE_CHATMESSAGES, NEWGEN_CHATMESSAGES, RYANFOURNIER_CHATMESSAGES, FEMBOY_CHATMESSAGES, SHABEEL_CHATMESSAGES, CAT_CHATMESSAGES, CUSTOM_CHATMESSAGES
 
 local OINK_CHATMESSAGES = {
     "OINK.INDUSTRIES ON TOP, USE OINK.INDUSTRIES!",
@@ -160,8 +161,13 @@ oink.ui_button("cat spam")
 oink.ui_button("custom spam")
 
 
-oink.ui_slider("rate (incr. 0.5)", 0.5, 5, 0.5)
+oink.ui_slider("rate (incr. 0.5)", 0.05, 5, 0.05)
 oink.ui_checkbox("OOC spam")
+oink.ui_button("psay spam")
+oink.ui_button("asay spam")
+oink.ui_text("name")
+oink.ui_text("text (psay)")
+oink.ui_text("text (asay)")
 
 oink.ui_button("destroy all timers")
 
@@ -298,6 +304,21 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 		end)
 	end
 
+    if oink.ui_get("chat-spammer.lua", "psay spam") then
+		timer.Create( "psay_spam", rate, 0, function()
+            local name = oink.ui_get("chat-spammer.lua", "name")
+            local textP = oink.ui_get("chat-spammer.lua", "text (psay)")
+			RunConsoleCommand("ulx", "psay", name, textP)
+		end)
+	end
+
+    if oink.ui_get("chat-spammer.lua", "asay spam") then
+		timer.Create( "asay_spam", rate, 0, function()
+            local textA = oink.ui_get("chat-spammer.lua", "text (asay)")
+			RunConsoleCommand("ulx", "asay", textA)
+		end)
+	end
+
 	if oink.ui_get("chat-spammer.lua", "destroy all timers") then
 		timer.Remove( "oink_spammer" )
 		timer.Remove( "hvh_spammer" )
@@ -310,5 +331,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 		timer.Remove( "femboy_spammer" ) -- femboy_spammer
 		timer.Remove( "shabeel_spammer" )
 		timer.Remove( "cat_spammer" )
+        	timer.Remove( "psay_spam" )
+        	timer.Remove( "asay_spam" )
 	end
 end)
