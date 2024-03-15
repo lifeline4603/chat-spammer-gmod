@@ -178,6 +178,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamOink)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamOink, 1, 126))
+		end
 		end)
 	end
 
@@ -188,6 +189,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamHVH)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamHVH, 1, 126))
+		end
 		end)
 	end
 
@@ -198,6 +200,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamToxic)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamToxic, 1, 126))
+		end
 		end)
 	end
 
@@ -208,6 +211,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamBible)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamBible, 1, 126))
+		end
 		end)
 	end
 
@@ -223,6 +227,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamCheadle)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamCheadle, 1, 126))
+		end
 		end)
 	end
 
@@ -233,6 +238,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamNewgen)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamNewgen, 1, 126))
+		end
 		end)
 	end
 
@@ -243,6 +249,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamFournier)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamFournier, 1, 126))
+		end
 		end)
 	end
 
@@ -253,6 +260,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamFemboy)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamFemboy, 1, 126))
+		end
 		end)
 	end
 
@@ -263,6 +271,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamShabeel)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamShabeel, 1, 126))
+		end
 		end)
 	end
 
@@ -273,6 +282,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamCat)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamCat, 1, 126))
+		end
 		end)
 	end
 
@@ -284,6 +294,7 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 				RunConsoleCommand("say", spamCustom)
 			else
 				RunConsoleCommand("say", "// " .. string.sub(spamCustom, 1, 126))
+		end
 		end)
 	end
 
@@ -301,4 +312,3 @@ local oocSpam = oink.ui_get("chat-spammer.lua", "OOC spam")
 		timer.Remove( "cat_spammer" )
 	end
 end)
-
