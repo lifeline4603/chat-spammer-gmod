@@ -161,7 +161,7 @@ sRate:OnChangeFunction(function()
     cheadle_api.Log("[debug] slider value:" .. sRate:GetValue())
 end)
 
-local spamType = cheadle_api.ImGui.Dropdown(mMainMenu, "type of spam", {"Normal", "OOC", "Advert", "Asay"})
+local spamType = cheadle_api.ImGui.Dropdown(mMainMenu, "type of spam", {"Normal", "OOC", "Advert", "Asay", "Psay Everyone"})
 spamType:SetPos(295, 104)
 spamType:SetSelected("Normal")
 spamType:OnChangeFunction(function()
@@ -183,6 +183,12 @@ bCheadle:SetClickFunction(function()
             RunConsoleCommand("say", "/advert " .. string.sub(spamCheadle, 1, 119)) -- this is a TERRIBLE way of doing this but if it works it works
         elseif spamType:GetSelected() == "Asay" then -- annoying part about this it reduces fps by like 0.05 I could use a table and a function and blah blah blah who cares
             RunConsoleCommand("ulx", "asay", string.sub(spamCheadle, 1, 126))
+        elseif spamType:GetSelected() == "Psay Everyone" then -- OMG I REALLY NEED TO STOP WITH THE ELSEIFS :sob:
+            for i, v in ipairs(player.GetAll()) do
+                if v != LocalPlayer() then
+                    RunConsoleCommand("ulx", "psay", v:Nick(), spamCheadle)
+                end
+            end
         end
     end)
 end)
@@ -202,6 +208,12 @@ bHvh:SetClickFunction(function()
                 RunConsoleCommand("say", "/advert " .. string.sub(spamHVH, 1, 119))
             elseif spamType:GetSelected() == "Asay" then
                 RunConsoleCommand("ulx", "asay", string.sub(spamHVH, 1, 126))
+            elseif spamType:GetSelected() == "Psay Everyone" then
+            for i, v in ipairs(player.GetAll()) do
+                if v != LocalPlayer() then
+                    RunConsoleCommand("ulx", "psay", v:Nick(), spamHVH)
+                end
+            end
         end
     end)
 end)
@@ -221,6 +233,12 @@ bToxic:SetClickFunction(function()
                 RunConsoleCommand("say", "/advert " .. string.sub(spamToxic, 1, 119))
             elseif spamType:GetSelected() == "Asay" then
                 RunConsoleCommand("ulx", "asay", string.sub(spamToxic, 1, 126))
+            elseif spamType:GetSelected() == "Psay Everyone" then
+            for i, v in ipairs(player.GetAll()) do
+                if v != LocalPlayer() then
+                    RunConsoleCommand("ulx", "psay", v:Nick(), spamToxic)
+                end
+            end
         end
     end)
 end)
@@ -240,6 +258,12 @@ bBible:SetClickFunction(function()
             RunConsoleCommand("say", "/advert " .. string.sub(spamBible, 1, 119))
         elseif spamType:GetSelected() == "Asay" then
             RunConsoleCommand("ulx", "asay", string.sub(spamBible, 1, 126))
+        elseif spamType:GetSelected() == "Psay Everyone" then
+            for i, v in ipairs(player.GetAll()) do
+                if v != LocalPlayer() then
+                    RunConsoleCommand("ulx", "psay", v:Nick(), spamBible)
+                end
+            end
         end
     end)
 end)
@@ -277,6 +301,12 @@ bNewgen:SetClickFunction(function()
             RunConsoleCommand("say", "/advert " .. string.sub(spamNewgen, 1, 119))
         elseif spamType:GetSelected() == "Asay" then
             RunConsoleCommand("ulx", "asay", string.sub(spamNewgen, 1, 126))
+        elseif spamType:GetSelected() == "Psay Everyone" then
+            for i, v in ipairs(player.GetAll()) do
+                if v != LocalPlayer() then
+                    RunConsoleCommand("ulx", "psay", v:Nick(), spamNewgen)
+                end
+            end
         end
     end)
 end)
@@ -296,6 +326,12 @@ bFournier:SetClickFunction(function()
             RunConsoleCommand("say", "/advert " .. string.sub(spamFournier, 1, 119))
         elseif spamType:GetSelected() == "Asay" then
             RunConsoleCommand("ulx", "asay", string.sub(spamFournier, 1, 126))
+        elseif spamType:GetSelected() == "Psay Everyone" then
+            for i, v in ipairs(player.GetAll()) do
+                if v != LocalPlayer() then
+                    RunConsoleCommand("ulx", "psay", v:Nick(), spamFournier)
+                end
+            end
         end
     end)
 end)
@@ -315,6 +351,12 @@ bFemboy:SetClickFunction(function()
             RunConsoleCommand("say", "/advert " .. string.sub(spamFemboy, 1, 119)) -- m-m-master~ I can't handle any m-more elseifs~
         elseif spamType:GetSelected() == "Asay" then
             RunConsoleCommand("ulx", "asay", string.sub(spamFemboy, 1, 126))
+        elseif spamType:GetSelected() == "Psay Everyone" then
+            for i, v in ipairs(player.GetAll()) do
+                if v != LocalPlayer() then
+                    RunConsoleCommand("ulx", "psay", v:Nick(), spamFemboy)
+                end
+            end
         end
     end)
 end)
@@ -334,6 +376,12 @@ bShabeel:SetClickFunction(function()
             RunConsoleCommand("say", "/advert " .. string.sub(spamShabeel, 1, 119))
         elseif spamType:GetSelected() == "Asay" then
             RunConsoleCommand("ulx", "asay", string.sub(spamShabeel, 1, 126))
+        elseif spamType:GetSelected() == "Psay Everyone" then
+            for i, v in ipairs(player.GetAll()) do
+                if v != LocalPlayer() then
+                    RunConsoleCommand("ulx", "psay", v:Nick(), spamShabeel)
+                end
+            end
         end
     end)
 end)
@@ -353,6 +401,12 @@ bMeow:SetClickFunction(function()
             RunConsoleCommand("say", "/advert " .. string.sub(spamCat, 1, 119))
         elseif spamType:GetSelected() == "Asay" then
             RunConsoleCommand("ulx", "asay", string.sub(spamCat, 1, 126))
+        elseif spamType:GetSelected() == "Psay Everyone" then
+            for i, v in ipairs(player.GetAll()) do
+                if v != LocalPlayer() then
+                    RunConsoleCommand("ulx", "psay", v:Nick(), spamCat)
+                end
+            end
         end
     end)
 end)
