@@ -184,7 +184,7 @@ bCheadle:SetClickFunction(function()
         elseif spamType:GetSelected() == "Asay" then -- annoying part about this it reduces fps by like 0.05 I could use a table and a function and blah blah blah who cares
             RunConsoleCommand("ulx", "asay", string.sub(spamCheadle, 1, 126))
         elseif spamType:GetSelected() == "Psay Everyone" then -- OMG I REALLY NEED TO STOP WITH THE ELSEIFS :sob:
-            for i, v in ipairs(player.GetAll()) do
+            for i, v in ipairs(player.GetAll()) do -- im not sure this is the "best" way of doing this but it semi works
                 if v != LocalPlayer() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), spamCheadle)
                 end
