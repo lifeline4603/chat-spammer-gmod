@@ -7,54 +7,54 @@ local OINK_CHATMESSAGES = {
     "OINK OINK OINK OINK OINK OINK OINK OINK",
     "40 per year, 12 per month. cheap price for extra skill.",
     "chat is he using oink.industries?",
-        "oink.industries - leading the cheating scene in 2023.",
-        "you can buy a better cheat at oink.industries"
+	"oink.industries - leading the cheating scene in 2023.",
+	"you can buy a better cheat at oink.industries"
 }
 
 local HVHTALK_CHATMESSAGES = {
-        "ur literally dog shit at this game!!!!!!",
-        "nn dog? nn dog? nn dog? nn dog? nn dog? nn dog? ",
-        [["why am i missing so much?!?!?!?!?" no fake angles in 2k23????]],
-        "you can buy a better cheat at secretservice.club",
-        "im winning too much bro. change up ur settings so u can beat me!!!!!!!!!",
-        "using idiotbox?",
-        "is ur nospread and norecoil working???",
-        "nice aa retard lmao",
-        "DID YOU SEE THAT BACKTRACK RIGHT THERE???",
-        "secretservice.club > your cheat"
+	"ur literally dog shit at this game!!!!!!",
+	"nn dog? nn dog? nn dog? nn dog? nn dog? nn dog? ",
+	[["why am i missing so much?!?!?!?!?" no fake angles in 2k23????]],
+	"you can buy a better cheat at secretservice.club",
+	"im winning too much bro. change up ur settings so u can beat me!!!!!!!!!",
+	"using idiotbox?",
+	"is ur nospread and norecoil working???",
+	"nice aa retard lmao",
+	"DID YOU SEE THAT BACKTRACK RIGHT THERE???",
+	"secretservice.club > your cheat"
 }
 
 local TOXICTALK_CHATMESSAGES = {
-        "HOLY SHIT YALL ARE HORRIBLE WTF",
-        "MY KD IS SO MUCH BETTER THAN YOURS LOOOOOOOL",
-        "YOU WANT TO 1V1 KID? ILL SLAP YOU LIKE YOUR MOTHER",
-        "EZZZZZZZZZZZZZZZZZ EZZZZZZZZZZZZZ NO OINK NO TALK",
-        [["YO WHAT CHEAT IS THAT WHAT CHEAT" SECRETSERVICE.CLUB ON TOPPPP]],
-        "crash! poof! gone! vaporized! destroyed!",
-        "lol you literally got owned by a child.",
-        "I WILL DOMINATE YOU BECAUSE IM YOUR MASTER, KITTEN...",
-        "HAHAHAHHAHAH OWNEDDDDDDDDDDDDDDDDD",
-        "FEELS LIKE TACOBOT.TF. IN REALITY, IM JUST BETTER."
+	"HOLY SHIT YALL ARE HORRIBLE WTF",
+	"MY KD IS SO MUCH BETTER THAN YOURS LOOOOOOOL",
+	"YOU WANT TO 1V1 KID? ILL SLAP YOU LIKE YOUR MOTHER",
+	"EZZZZZZZZZZZZZZZZZ EZZZZZZZZZZZZZ NO OINK NO TALK",
+	[["YO WHAT CHEAT IS THAT WHAT CHEAT" SECRETSERVICE.CLUB ON TOPPPP]],
+	"crash! poof! gone! vaporized! destroyed!",
+	"lol you literally got owned by a child.",
+	"I WILL DOMINATE YOU BECAUSE IM YOUR MASTER, KITTEN...",
+	"HAHAHAHHAHAH OWNEDDDDDDDDDDDDDDDDD",
+	"FEELS LIKE TACOBOT.TF. IN REALITY, IM JUST BETTER."
 }
 
 local BIBLE_CHATMESSAGES = {
-        [["Ask and it will be given to you." - Jesus (Matthew 7:7)]],
-        [["Faith can move mountains." - Jesus (Matthew 17:20)]],
-        [["I am the way, the truth, and the life." - Jesus (John 14:6)]],
-        [["Cast your cares on the Lord." - David (Psalm 55:22)]],
-        [["Seek and you will find." - Jesus (Matthew 7:7)]],
-        [["The Lord is my light and salvation." - David (Psalm 27:1)]],
-        [["Love covers a multitude of sins." - Peter (1 Peter 4:8)]],
-        [["Do not worry, for I am with you." - Isaiah (Isaiah 41:10)]],
-        [["A soft answer turns away wrath." - Solomon (Proverbs 15:1)]],
-        [["Trust in the Lord with all your heart." - Solomon (Proverbs 3:5)]],
-        [["I can do everything through Him." - Paul (Philippians 4:13)]],
-        [["He heals the brokenhearted." - David (Psalm 147:3)]],
-        [["The word of God is living and active." - Paul (Hebrews 4:12)]],
-        [["Give thanks in all circumstances." - Paul (1 Thessalonians 5:18)]],
-        [["The Lord will fight for you." - Moses (Exodus 14:14)]]
+	[["Ask and it will be given to you." - Jesus (Matthew 7:7)]],
+	[["Faith can move mountains." - Jesus (Matthew 17:20)]],
+	[["I am the way, the truth, and the life." - Jesus (John 14:6)]],
+	[["Cast your cares on the Lord." - David (Psalm 55:22)]],
+	[["Seek and you will find." - Jesus (Matthew 7:7)]],
+	[["The Lord is my light and salvation." - David (Psalm 27:1)]],
+	[["Love covers a multitude of sins." - Peter (1 Peter 4:8)]],
+	[["Do not worry, for I am with you." - Isaiah (Isaiah 41:10)]],
+	[["A soft answer turns away wrath." - Solomon (Proverbs 15:1)]],
+	[["Trust in the Lord with all your heart." - Solomon (Proverbs 3:5)]],
+	[["I can do everything through Him." - Paul (Philippians 4:13)]],
+	[["He heals the brokenhearted." - David (Psalm 147:3)]],
+	[["The word of God is living and active." - Paul (Hebrews 4:12)]],
+	[["Give thanks in all circumstances." - Paul (1 Thessalonians 5:18)]],
+	[["The Lord will fight for you." - Moses (Exodus 14:14)]]
 }
-
+	
 local CHEADLEWARE_CHATMESSAGES = {
     "Cheadleware on top! Buy now on cheadleware.net",
     "she cheadle on my software whilst spy caming on them hoes with screengrab proof visuals",
@@ -117,43 +117,43 @@ local SHABEEL_CHATMESSAGES = {
 }
 
 local CAT_CHATMESSAGES = {
-        "meow",
-        "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow",
-        "prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
-        "WHO LEFT THE ENGINE RUNNINGGGG",
-        "wake up, eep.",
-        "Today's Chat Spam Is Brough To You By The One And Only Thousand Meow Stare",
-        "growling noises are soooooo cute grrrrrprrrr"
+	"meow",
+	"meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow",
+	"prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+	"WHO LEFT THE ENGINE RUNNINGGGG",
+	"wake up, eep.",
+	"Today's Chat Spam Is Brough To You By The One And Only Thousand Meow Stare",
+	"growling noises are soooooo cute grrrrrprrrr"
 }
 
 local SECRET_CHATMESSAGES = {
-        "secretservice on top! get at secretservice.club",
-        "Get Good, Get secretservice.club",
-        "Want the best gmod cheat, Get secretservice.club",
-        "SecretService.club owns you!!",
-        "SecretService.club owns me!! UwU",
-        "SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club",
-        "SecretService.club > any cheat",
-        "1v1 me bro, SecretService.club on TOPP!!!",
-        "YOU WISH YOU HAVE SECRETSERVICE.CLUB",
-        "https://imgur.com/a/qZrfSrO SECRETSERVICE.CLUB OWNS YOU!!!",
-        "LSAC? ROTAC? never heard of it, SECRETSERVICE.CLUB ON TOP!!",
-        "hitting this secretservice.club OG joint"
+	"secretservice on top! get at secretservice.club",
+	"Get Good, Get secretservice.club",
+	"Want the best gmod cheat, Get secretservice.club",
+	"SecretService.club owns you!!",
+	"SecretService.club owns me!! UwU",
+	"SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club",
+	"SecretService.club > any cheat",
+	"1v1 me bro, SecretService.club on TOPP!!!",
+	"YOU WISH YOU HAVE SECRETSERVICE.CLUB",
+	"https://imgur.com/a/qZrfSrO SECRETSERVICE.CLUB OWNS YOU!!!",
+	"LSAC? ROTAC? never heard of it, SECRETSERVICE.CLUB ON TOP!!",
+	"hitting this secretservice.club OG joint"
 }
 
 local CUSTOM_CHATMESSAGES = { -- replace with whatever
-        "replace with custom message here",
-        "replace with custom message here",
-        "replace with custom message here",
-        "replace with custom message here",
-        "replace with custom message here",
-        "replace with custom message here",
-        "replace with custom message here",
-        "replace with custom message here",
-        "replace with custom message here",
-        "replace with custom message here",
-        "replace with custom message here",
-        "replace with custom message here"
+	"replace with custom message here",
+	"replace with custom message here",
+	"replace with custom message here",
+	"replace with custom message here",
+	"replace with custom message here",
+	"replace with custom message here",
+	"replace with custom message here",
+	"replace with custom message here",
+	"replace with custom message here",
+	"replace with custom message here",
+	"replace with custom message here",
+	"replace with custom message here"
 }
 
 
@@ -185,123 +185,123 @@ hook.Add("Think", "hSpammer", function()
 
     local _sRate = secret.config_get("sRate")
 
-        if secret.config_get("bOink") then
-                timer.Create( "oink_spammer", _sRate, 0, function()
-                        local spamOink = OINK_CHATMESSAGES[math.random(#OINK_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamOink)
+	if secret.config_get("bOink") then
+		timer.Create( "oink_spammer", _sRate, 0, function()
+			local spamOink = OINK_CHATMESSAGES[math.random(#OINK_CHATMESSAGES)]
+			RunConsoleCommand("say", spamOink)
+			
+		end)
+	end
 
-                end)
-        end
+	if secret.config_get("bHvh") then
+		timer.Create( "hvh_spammer", _sRate, 0, function() -- originally it was "rate" but I fixed it I think lifeline was pasting it from chat-spammer-oink.lua \\ lifeline here, hes right (femboys make mistakes uwu)
+			local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
+			RunConsoleCommand("say", spamHVH)
+			
+		end)
+	end
 
-        if secret.config_get("bHvh") then
-                timer.Create( "hvh_spammer", _sRate, 0, function() -- originally it was "rate" but I fixed it I think lifeline was pasting it from chat-spammer-oink.lua \\ lifeline here, hes right (femboys make mistakes uwu)
-                        local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamHVH)
+	if secret.config_get("bToxic") then
+		timer.Create( "toxic_spammer", _sRate, 0, function()
+			local spamToxic = TOXICTALK_CHATMESSAGES[math.random(#TOXICTALK_CHATMESSAGES)]
+			RunConsoleCommand("say", spamToxic)
+			
+		end)
+	end
 
-                end)
-        end
+	if secret.config_get("bBible") then
+		timer.Create( "bible_spammer", _sRate, 0, function()
+			local spamBible = BIBLE_CHATMESSAGES[math.random(#BIBLE_CHATMESSAGES)]
+			RunConsoleCommand("say", spamBible)
+			
+		end)
+	end
 
-        if secret.config_get("bToxic") then
-                timer.Create( "toxic_spammer", _sRate, 0, function()
-                        local spamToxic = TOXICTALK_CHATMESSAGES[math.random(#TOXICTALK_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamToxic)
-
-                end)
-        end
-
-        if secret.config_get("bBible") then
-                timer.Create( "bible_spammer", _sRate, 0, function()
-                        local spamBible = BIBLE_CHATMESSAGES[math.random(#BIBLE_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamBible)
-
-                end)
-        end
-
-        if secret.config_get("bGir") then
+	if secret.config_get("bGir") then
         secret.notify("gir489_spammer timer couldn't start")
         secret.notify("check secret console for more info")
         secret.log("[chat-spammer.lua] to be in compliance of github's acceptable use policies, this spammer is removed.", 1)
         secret.log("[chat-spammer.lua] if you want the uncensored version, you can ask lifeline4603 on discord or do one yourself.", 1)
-        end
+	end
 
     if secret.config_get("bCheadle") then
-                timer.Create( "cheadle_spammer", _sRate, 0, function()
-                        local spamCheadle = CHEADLEWARE_CHATMESSAGES[math.random(#CHEADLEWARE_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamCheadle)
+		timer.Create( "cheadle_spammer", _sRate, 0, function()
+			local spamCheadle = CHEADLEWARE_CHATMESSAGES[math.random(#CHEADLEWARE_CHATMESSAGES)]
+			RunConsoleCommand("say", spamCheadle)
+			
+		end)
+	end
 
-                end)
-        end
+	if secret.config_get("bNewgen") then
+		timer.Create( "newgen_spammer", _sRate, 0, function()
+			local spamNewgen = NEWGEN_CHATMESSAGES[math.random(#NEWGEN_CHATMESSAGES)]
+			RunConsoleCommand("say", spamNewgen)
+			
+		end)
+	end
 
-        if secret.config_get("bNewgen") then
-                timer.Create( "newgen_spammer", _sRate, 0, function()
-                        local spamNewgen = NEWGEN_CHATMESSAGES[math.random(#NEWGEN_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamNewgen)
+	if secret.config_get("bFournier") then
+		timer.Create( "fournier_spammer", _sRate, 0, function()
+			local spamFournier = RYANFOURNIER_CHATMESSAGES[math.random(#RYANFOURNIER_CHATMESSAGES)]
+			RunConsoleCommand("say", spamFournier)
+			
+		end)
+	end
 
-                end)
-        end
+	if secret.config_get("bFemboy") then
+		timer.Create( "femboy_spammer", _sRate, 0, function()
+			local spamFemboy = FEMBOY_CHATMESSAGES[math.random(#FEMBOY_CHATMESSAGES)]
+			RunConsoleCommand("say", spamFemboy)
+			
+		end)
+	end
 
-        if secret.config_get("bFournier") then
-                timer.Create( "fournier_spammer", _sRate, 0, function()
-                        local spamFournier = RYANFOURNIER_CHATMESSAGES[math.random(#RYANFOURNIER_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamFournier)
+	if secret.config_get("bShabeel") then
+		timer.Create( "shabeel_spammer", _sRate, 0, function()
+			local spamShabeel = SHABEEL_CHATMESSAGES[math.random(#SHABEEL_CHATMESSAGES)]
+			RunConsoleCommand("say", spamShabeel)
+			
+		end)
+	end
 
-                end)
-        end
+	if secret.config_get("bMeow") then
+		timer.Create( "cat_spammer", _sRate, 0, function()
+			local spamCat = CAT_CHATMESSAGES[math.random(#CAT_CHATMESSAGES)]
+			RunConsoleCommand("say", spamCat)
+			
+		end)
+	end
 
-        if secret.config_get("bFemboy") then
-                timer.Create( "femboy_spammer", _sRate, 0, function()
-                        local spamFemboy = FEMBOY_CHATMESSAGES[math.random(#FEMBOY_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamFemboy)
+	if secret.config_get("bSecret") then
+		timer.Create( "secret_spammer", _sRate, 0, function()
+			local spamsecret = SECRET_CHATMESSAGES[math.random(#SECRET_CHATMESSAGES)]
+			RunConsoleCommand("say", spamsecret)
+			
+		end)
+	end
 
-                end)
-        end
-
-        if secret.config_get("bShabeel") then
-                timer.Create( "shabeel_spammer", _sRate, 0, function()
-                        local spamShabeel = SHABEEL_CHATMESSAGES[math.random(#SHABEEL_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamShabeel)
-
-                end)
-        end
-
-        if secret.config_get("bMeow") then
-                timer.Create( "cat_spammer", _sRate, 0, function()
-                        local spamCat = CAT_CHATMESSAGES[math.random(#CAT_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamCat)
-
-                end)
-        end
-
-        if secret.config_get("bSecret") then
-                timer.Create( "secret_spammer", _sRate, 0, function()
-                        local spamsecret = SECRET_CHATMESSAGES[math.random(#SECRET_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamsecret)
-
-                end)
-        end
-
-        if secret.config_get("bCustom") then
-                secret.log("replace anything in the CUSTOM_CHATMESSAGES table within the code!", 3)
+	if secret.config_get("bCustom") then
+		secret.log("replace anything in the CUSTOM_CHATMESSAGES table within the code!", 3)
         secret.notify("check secret console for instructions")
-                timer.Create( "custom_spammer", _sRate, 0, function()
-                        local spamCustom = CUSTOM_CHATMESSAGES[math.random(#CUSTOM_CHATMESSAGES)]
-                        RunConsoleCommand("say", spamCustom)
+		timer.Create( "custom_spammer", _sRate, 0, function()
+			local spamCustom = CUSTOM_CHATMESSAGES[math.random(#CUSTOM_CHATMESSAGES)]
+			RunConsoleCommand("say", spamCustom)
+			
+		end)
+	end
 
-                end)
-        end
-
-        if secret.config_get("bDestroy") then
-                timer.Remove( "oink_spammer" )
-                timer.Remove( "hvh_spammer" )
-                timer.Remove( "toxic_spammer" )
-                timer.Remove( "bible_spammer" )
-                timer.Remove( "custom_spammer" )
-                timer.Remove( "cheadle_spammer" )
-                timer.Remove( "newgen_spammer" )
-                timer.Remove( "fournier_spammer" )
-                timer.Remove( "femboy_spammer" ) -- femboy_spammer
-                timer.Remove( "shabeel_spammer" )
-                timer.Remove( "cat_spammer" )
-                timer.Remove( "secret_spammer" )
-        end
+	if secret.config_get("bDestroy") then
+		timer.Remove( "oink_spammer" )
+		timer.Remove( "hvh_spammer" )
+		timer.Remove( "toxic_spammer" )
+		timer.Remove( "bible_spammer" )
+		timer.Remove( "custom_spammer" )
+		timer.Remove( "cheadle_spammer" )
+		timer.Remove( "newgen_spammer" )
+		timer.Remove( "fournier_spammer" )
+		timer.Remove( "femboy_spammer" ) -- femboy_spammer
+		timer.Remove( "shabeel_spammer" )
+		timer.Remove( "cat_spammer" )
+		timer.Remove( "secret_spammer" )
+	end
 end)
