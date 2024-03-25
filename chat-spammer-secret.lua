@@ -305,4 +305,3 @@ hook.Add("Think", "hSpammer", function()
 		timer.Remove( "secret_spammer" )
 	end
 end)
-
