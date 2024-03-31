@@ -172,7 +172,7 @@ secret.create_button("lua", "elements", "shabeel spam", "bShabeel")
 secret.create_button("lua", "elements", "cat spam", "bMeow")
 secret.create_button("lua", "elements", "secret spam/advert", "bSecret")
 secret.create_button("lua", "elements", "custom spam", "bCustom")
-secret.create_checkbox("lua", "elements", "name", "cOOC")
+secret.create_checkbox("lua", "elements", "OOC spam", "cOOC")
 
 
 secret.create_slider("lua", "elements", "rate (seconds)", 1, 5, "sRate")
@@ -187,32 +187,44 @@ local _sRate = secret.config_get("sRate")
 if secret.config_get("bOink") then
 	timer.Create( "oink_spammer", _sRate, 0, function()
 		local spamOink = OINK_CHATMESSAGES[math.random(#OINK_CHATMESSAGES)]
+	if secret.config_get("cOOC") == true then
+		RunConsoleCommand("say", "// " .. string.sub(spamOink, 1, 126)) 
+	else
 		RunConsoleCommand("say", spamOink)
-		
+		end
 	end)
 end
 
 if secret.config_get("bHvh") then
 	timer.Create( "hvh_spammer", _sRate, 0, function() -- originally it was "rate" but I fixed it I think lifeline was pasting it from chat-spammer-oink.lua \\ lifeline here, hes right (femboys make mistakes uwu)
 		local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
+	if secret.config_get("cOOC") == true then
+		RunConsoleCommand("say", "// " .. string.sub(spamHVH, 1, 126)) 
+	else
 		RunConsoleCommand("say", spamHVH)
-		
+		end
 	end)
 end
 
 if secret.config_get("bToxic") then
 	timer.Create( "toxic_spammer", _sRate, 0, function()
 		local spamToxic = TOXICTALK_CHATMESSAGES[math.random(#TOXICTALK_CHATMESSAGES)]
-		RunConsoleCommand("say", spamToxic)
-		
+		if secret.config_get("cOOC") == true then
+			RunConsoleCommand("say", "// " .. string.sub(spamToxic, 1, 126)) 
+		else
+			RunConsoleCommand("say", spamToxic)
+		end
 	end)
 end
 
 if secret.config_get("bBible") then
 	timer.Create( "bible_spammer", _sRate, 0, function()
 		local spamBible = BIBLE_CHATMESSAGES[math.random(#BIBLE_CHATMESSAGES)]
-		RunConsoleCommand("say", spamBible)
-		
+		if secret.config_get("cOOC") == true then
+			RunConsoleCommand("say", "// " .. string.sub(spamBible, 1, 126)) 
+		else
+			RunConsoleCommand("say", spamBible)
+		end
 	end)
 end
 
@@ -226,16 +238,22 @@ end
 if secret.config_get("bCheadle") then
 	timer.Create( "cheadle_spammer", _sRate, 0, function()
 		local spamCheadle = CHEADLEWARE_CHATMESSAGES[math.random(#CHEADLEWARE_CHATMESSAGES)]
-		RunConsoleCommand("say", spamCheadle)
-		
+		if secret.config_get("cOOC") == true then
+			RunConsoleCommand("say", "// " .. string.sub(spamCheadle, 1, 126)) 
+		else
+			RunConsoleCommand("say", spamCheadle)
+		end
 	end)
 end
 
 if secret.config_get("bNewgen") then
 	timer.Create( "newgen_spammer", _sRate, 0, function()
 		local spamNewgen = NEWGEN_CHATMESSAGES[math.random(#NEWGEN_CHATMESSAGES)]
-		RunConsoleCommand("say", spamNewgen)
-		
+		if secret.config_get("cOOC") == true then
+			RunConsoleCommand("say", "// " .. string.sub(spamNewgen, 1, 126)) 
+		else
+			RunConsoleCommand("say", spamNewgen)
+		end
 	end)
 end
 
@@ -243,39 +261,55 @@ if secret.config_get("bFournier") then
 	timer.Create( "fournier_spammer", _sRate, 0, function()
 		local spamFournier = RYANFOURNIER_CHATMESSAGES[math.random(#RYANFOURNIER_CHATMESSAGES)]
 		RunConsoleCommand("say", spamFournier)
-		
+		if secret.config_get("cOOC") == true then
+			RunConsoleCommand("say", "// " .. string.sub(spamFournier, 1, 126)) 
+		else
+			RunConsoleCommand("say", spamFournier)
+		end
 	end)
 end
 
 if secret.config_get("bFemboy") then
 	timer.Create( "femboy_spammer", _sRate, 0, function()
 		local spamFemboy = FEMBOY_CHATMESSAGES[math.random(#FEMBOY_CHATMESSAGES)]
-		RunConsoleCommand("say", spamFemboy)
-		
+		if secret.config_get("cOOC") == true then
+			RunConsoleCommand("say", "// " .. string.sub(spamFemboy, 1, 126)) 
+		else
+			RunConsoleCommand("say", spamFemboy)
+		end
 	end)
 end
 
 if secret.config_get("bShabeel") then
 	timer.Create( "shabeel_spammer", _sRate, 0, function()
 		local spamShabeel = SHABEEL_CHATMESSAGES[math.random(#SHABEEL_CHATMESSAGES)]
-		RunConsoleCommand("say", spamShabeel)
-		
+		if secret.config_get("cOOC") == true then
+			RunConsoleCommand("say", "// " .. string.sub(spamShabeel, 1, 126)) 
+		else
+			RunConsoleCommand("say", spamShabeel)
+		end
 	end)
 end
 
 if secret.config_get("bMeow") then
 	timer.Create( "cat_spammer", _sRate, 0, function()
 		local spamCat = CAT_CHATMESSAGES[math.random(#CAT_CHATMESSAGES)]
-		RunConsoleCommand("say", spamCat)
-		
+		if secret.config_get("cOOC") == true then
+			RunConsoleCommand("say", "// " .. string.sub(spamCat, 1, 126)) 
+		else
+			RunConsoleCommand("say", spamCat)
+		end
 	end)
 end
 
 if secret.config_get("bSecret") then
 	timer.Create( "secret_spammer", _sRate, 0, function()
 		local spamsecret = SECRET_CHATMESSAGES[math.random(#SECRET_CHATMESSAGES)]
-		RunConsoleCommand("say", spamsecret)
-		
+		if secret.config_get("cOOC") == true then
+			RunConsoleCommand("say", "// " .. string.sub(spamsecret, 1, 126)) 
+		else
+			RunConsoleCommand("say", spamsecret)
+		end
 	end)
 end
 
@@ -284,8 +318,11 @@ if secret.config_get("bCustom") then
 	secret.notify("check secret console for instructions")
 	timer.Create( "custom_spammer", _sRate, 0, function()
 		local spamCustom = CUSTOM_CHATMESSAGES[math.random(#CUSTOM_CHATMESSAGES)]
-		RunConsoleCommand("say", spamCustom)
-		
+		if secret.config_get("cOOC") == true then
+			RunConsoleCommand("say", "// " .. string.sub(spamCustom, 1, 126)) 
+		else
+			RunConsoleCommand("say", spamCustom)
+		end
 	end)
 end
 
