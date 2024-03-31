@@ -172,6 +172,7 @@ secret.create_button("lua", "elements", "shabeel spam", "bShabeel")
 secret.create_button("lua", "elements", "cat spam", "bMeow")
 secret.create_button("lua", "elements", "secret spam/advert", "bSecret")
 secret.create_button("lua", "elements", "custom spam", "bCustom")
+secret.create_checkbox("lua", "elements", "name", "cOOC")
 
 
 secret.create_slider("lua", "elements", "rate (seconds)", 1, 5, "sRate")
