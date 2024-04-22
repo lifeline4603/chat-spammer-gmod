@@ -105,7 +105,8 @@ local FEMBOY_CHATMESSAGES = {
     "You can p-pinch and twist both of my nipples. They're very sensitive and round.",
     "I remember when I was t-ied up for hours with a dildo pumping into me. My a-ass has never been the same...",
     "I'm the #385923th cumdump in the world. You can use me for free uwu.",
-    "P-Please DM me on discord. My name is 'iamleigh_'. E-Dating Prices are 5-10€ an hour."
+    "P-Please DM me on discord. My name is 'iamleigh_'. E-Dating Prices are 5-10€ an hour.",
+	"p-p-please... master~ m-my b-belly is... hurting... mfgdfm~ p-plea-ah~"
 }
 
 local SHABEEL_CHATMESSAGES = {
