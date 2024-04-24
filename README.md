@@ -7,4 +7,4 @@ todo:
 - ~~ooc integration for secret~~
 - advert integration for oink and secret
 - ~~secret spam~~
-- fix chat-spammer-secret.lua
+- fix chat-spammer-secret.lua (do to rework of secret.create.button)
