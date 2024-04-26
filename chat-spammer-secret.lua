@@ -1,3 +1,6 @@
+-- notes
+-- ooc spam is not here, dont care to add it (unless mr shiba the femboy wants to add it, i MIGHT give you a sub extend if you do (maybe))
+
 -- messages
 
 local OINK_CHATMESSAGES = {
@@ -15,13 +18,12 @@ local HVHTALK_CHATMESSAGES = {
 	"ur literally dog shit at this game!!!!!!",
 	"nn dog? nn dog? nn dog? nn dog? nn dog? nn dog? ",
 	[["why am i missing so much?!?!?!?!?" no fake angles in 2k23????]],
-	"you can buy a better cheat at secretservice.club",
+	"you can buy a better cheat at oink.industries",
 	"im winning too much bro. change up ur settings so u can beat me!!!!!!!!!",
 	"using idiotbox?",
 	"is ur nospread and norecoil working???",
 	"nice aa retard lmao",
-	"DID YOU SEE THAT BACKTRACK RIGHT THERE???",
-	"secretservice.club > your cheat"
+	"DID YOU SEE THAT BACKTRACK RIGHT THERE???"
 }
 
 local TOXICTALK_CHATMESSAGES = {
@@ -29,7 +31,7 @@ local TOXICTALK_CHATMESSAGES = {
 	"MY KD IS SO MUCH BETTER THAN YOURS LOOOOOOOL",
 	"YOU WANT TO 1V1 KID? ILL SLAP YOU LIKE YOUR MOTHER",
 	"EZZZZZZZZZZZZZZZZZ EZZZZZZZZZZZZZ NO OINK NO TALK",
-	[["YO WHAT CHEAT IS THAT WHAT CHEAT" SECRETSERVICE.CLUB ON TOPPPP]],
+	[["YO WHAT CHEAT IS THAT WHAT CHEAT" OINK.INDUSTRIES ON TOPPPP]],
 	"crash! poof! gone! vaporized! destroyed!",
 	"lol you literally got owned by a child.",
 	"I WILL DOMINATE YOU BECAUSE IM YOUR MASTER, KITTEN...",
@@ -126,21 +128,6 @@ local CAT_CHATMESSAGES = {
 	"growling noises are soooooo cute grrrrrprrrr"
 }
 
-local SECRET_CHATMESSAGES = {
-	"secretservice on top! get at secretservice.club",
-	"Get Good, Get secretservice.club",
-	"Want the best gmod cheat, Get secretservice.club",
-	"SecretService.club owns you!!",
-	"SecretService.club owns me!! UwU",
-	"SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club SecretService.club",
-	"SecretService.club > any cheat",
-	"1v1 me bro, SecretService.club on TOPP!!!",
-	"YOU WISH YOU HAVE SECRETSERVICE.CLUB",
-	"https://imgur.com/a/qZrfSrO SECRETSERVICE.CLUB OWNS YOU!!!",
-	"LSAC? ROTAC? never heard of it, SECRETSERVICE.CLUB ON TOP!!",
-	"hitting this secretservice.club OG joint"
-}
-
 local CUSTOM_CHATMESSAGES = { -- replace with whatever
 	"replace with custom message here",
 	"replace with custom message here",
@@ -157,140 +144,111 @@ local CUSTOM_CHATMESSAGES = { -- replace with whatever
 }
 
 
--- context, buttons, blah blah blah
+-- part one of context details
 
-secret.create_button("lua", "elements", "oink spam/advert", "bOink") -- we do buttons because i couldn't get checkboxes to work with timers
-secret.create_button("lua", "elements", "hvh talk", "bHvh")
-secret.create_button("lua", "elements", "toxic talk", "bToxic")
-secret.create_button("lua", "elements", "bible quotes", "bBible")
-secret.create_button("lua", "elements", "gir489 quotes (extreme racism)", "bGir")
-secret.create_button("lua", "elements", "cheadle spam", "bCheadle")
-secret.create_button("lua", "elements", "newgen spam", "bNewgen")
-secret.create_button("lua", "elements", "ryan fournier spam", "bFournier")
-secret.create_button("lua", "elements", "femboy spam (extreme nsfw)", "bFemboy")
-secret.create_button("lua", "elements", "shabeel spam", "bShabeel")
-secret.create_button("lua", "elements", "cat spam", "bMeow")
-secret.create_button("lua", "elements", "secret spam/advert", "bSecret")
-secret.create_button("lua", "elements", "custom spam", "bCustom")
+secret.create_groupbox("misc", "right", "chat spammer", 490)
 
+secret.create_slider("misc", "chat spammer", "rate (seconds)", 1, 5, "sRate")
 
-secret.create_slider("lua", "elements", "rate (seconds)", 1, 5, "sRate")
+local sliderRate = secret.config_get("sRate")
 
-secret.create_button("lua", "elements", "destroy all timers", "bDestroy")
-
--- insert ooc checkbox here, again I dont have sercet's api - shiba
-
-hook.Remove("Think", "hSpammer")
-hook.Add("Think", "hSpammer", function()
-
-    local _sRate = secret.config_get("sRate")
-
-	if secret.config_get("bOink") then
-		timer.Create( "oink_spammer", _sRate, 0, function()
+	local function bOinkSpam()
+		timer.Create( "oink_spammer", sliderRate, 0, function()
 			local spamOink = OINK_CHATMESSAGES[math.random(#OINK_CHATMESSAGES)]
 			RunConsoleCommand("say", spamOink)
 			
 		end)
 	end
 
-	if secret.config_get("bHvh") then
-		timer.Create( "hvh_spammer", _sRate, 0, function() -- originally it was "rate" but I fixed it I think lifeline was pasting it from chat-spammer-oink.lua \\ lifeline here, hes right (femboys make mistakes uwu)
+	local function bHvhSpam()
+		timer.Create( "hvh_spammer", sliderRate, 0, function()
 			local spamHVH = HVHTALK_CHATMESSAGES[math.random(#HVHTALK_CHATMESSAGES)]
 			RunConsoleCommand("say", spamHVH)
 			
 		end)
 	end
 
-	if secret.config_get("bToxic") then
-		timer.Create( "toxic_spammer", _sRate, 0, function()
+	local function bToxicSpam()
+		timer.Create( "toxic_spammer", sliderRate, 0, function()
 			local spamToxic = TOXICTALK_CHATMESSAGES[math.random(#TOXICTALK_CHATMESSAGES)]
 			RunConsoleCommand("say", spamToxic)
 			
 		end)
 	end
 
-	if secret.config_get("bBible") then
-		timer.Create( "bible_spammer", _sRate, 0, function()
+	local function bBibleSpam()
+		timer.Create( "bible_spammer", sliderRate, 0, function()
 			local spamBible = BIBLE_CHATMESSAGES[math.random(#BIBLE_CHATMESSAGES)]
 			RunConsoleCommand("say", spamBible)
 			
 		end)
 	end
 
-	if secret.config_get("bGir") then
-        secret.notify("gir489_spammer timer couldn't start")
-        secret.notify("check secret console for more info")
-        secret.log("[chat-spammer.lua] to be in compliance of github's acceptable use policies, this spammer is removed.", 1)
-        secret.log("[chat-spammer.lua] if you want the uncensored version, you can ask lifeline4603 on discord or do one yourself.", 1)
+	local function bGirSpam()
+        secret.notify("gir489_spammer timer couldn't start. check secret console for more info", 2)
+        secret.log("[chat-spammer.lua] to be in compliance of github's acceptable use policies, this spammer is removed.", 1, true)
+        secret.log("[chat-spammer.lua] if you want the uncensored version, you can ask lifeline4603 on discord or do one yourself.", 1, true)
 	end
 
-    if secret.config_get("bCheadle") then
-		timer.Create( "cheadle_spammer", _sRate, 0, function()
+    local function bCheadleSpam()
+		timer.Create( "cheadle_spammer", sliderRate, 0, function()
 			local spamCheadle = CHEADLEWARE_CHATMESSAGES[math.random(#CHEADLEWARE_CHATMESSAGES)]
 			RunConsoleCommand("say", spamCheadle)
 			
 		end)
 	end
 
-	if secret.config_get("bNewgen") then
-		timer.Create( "newgen_spammer", _sRate, 0, function()
+	local function bNewgenSpam()
+		timer.Create( "newgen_spammer", sliderRate, 0, function()
 			local spamNewgen = NEWGEN_CHATMESSAGES[math.random(#NEWGEN_CHATMESSAGES)]
 			RunConsoleCommand("say", spamNewgen)
 			
 		end)
 	end
 
-	if secret.config_get("bFournier") then
-		timer.Create( "fournier_spammer", _sRate, 0, function()
+	local function bFournierSpam()
+		timer.Create( "fournier_spammer", sliderRate, 0, function()
 			local spamFournier = RYANFOURNIER_CHATMESSAGES[math.random(#RYANFOURNIER_CHATMESSAGES)]
 			RunConsoleCommand("say", spamFournier)
 			
 		end)
 	end
 
-	if secret.config_get("bFemboy") then
-		timer.Create( "femboy_spammer", _sRate, 0, function()
+	local function bFemboySpam()
+		timer.Create( "femboy_spammer", sliderRate, 0, function()
 			local spamFemboy = FEMBOY_CHATMESSAGES[math.random(#FEMBOY_CHATMESSAGES)]
 			RunConsoleCommand("say", spamFemboy)
 			
 		end)
 	end
 
-	if secret.config_get("bShabeel") then
-		timer.Create( "shabeel_spammer", _sRate, 0, function()
+	local function bShabeelSpam()
+		timer.Create( "shabeel_spammer", sliderRate, 0, function()
 			local spamShabeel = SHABEEL_CHATMESSAGES[math.random(#SHABEEL_CHATMESSAGES)]
 			RunConsoleCommand("say", spamShabeel)
 			
 		end)
 	end
 
-	if secret.config_get("bMeow") then
-		timer.Create( "cat_spammer", _sRate, 0, function()
+	local function bMeowSpam()
+		timer.Create( "cat_spammer", sliderRate, 0, function()
 			local spamCat = CAT_CHATMESSAGES[math.random(#CAT_CHATMESSAGES)]
 			RunConsoleCommand("say", spamCat)
 			
 		end)
 	end
 
-	if secret.config_get("bSecret") then
-		timer.Create( "secret_spammer", _sRate, 0, function()
-			local spamsecret = SECRET_CHATMESSAGES[math.random(#SECRET_CHATMESSAGES)]
-			RunConsoleCommand("say", spamsecret)
-			
-		end)
-	end
-
-	if secret.config_get("bCustom") then
+	local function bCustomSpam()
 		secret.log("replace anything in the CUSTOM_CHATMESSAGES table within the code!", 3)
-        secret.notify("check secret console for instructions")
-		timer.Create( "custom_spammer", _sRate, 0, function()
+        secret.notify("check secret console for instructions", 0)
+		timer.Create( "custom_spammer", sliderRate, 0, function()
 			local spamCustom = CUSTOM_CHATMESSAGES[math.random(#CUSTOM_CHATMESSAGES)]
 			RunConsoleCommand("say", spamCustom)
 			
 		end)
 	end
 
-	if secret.config_get("bDestroy") then
+	local function bRemove()
 		timer.Remove( "oink_spammer" )
 		timer.Remove( "hvh_spammer" )
 		timer.Remove( "toxic_spammer" )
@@ -302,7 +260,19 @@ hook.Add("Think", "hSpammer", function()
 		timer.Remove( "femboy_spammer" ) -- femboy_spammer
 		timer.Remove( "shabeel_spammer" )
 		timer.Remove( "cat_spammer" )
-		timer.Remove( "secret_spammer" )
 	end
-end)
+
+	secret.create_button("misc", "chat spammer", "oink spam/advert", bOinkSpam) -- we do buttons because i couldn't get checkboxes to work with timers
+	secret.create_button("misc", "chat spammer", "hvh talk", bHvhSpam)
+	secret.create_button("misc", "chat spammer", "toxic talk", bToxicSpam)
+	secret.create_button("misc", "chat spammer", "bible quotes", bBibleSpam)
+	secret.create_button("misc", "chat spammer", "gir489 quotes (extreme racism)", bGirSpam)
+	secret.create_button("misc", "chat spammer", "cheadle spam", bCheadleSpam)
+	secret.create_button("misc", "chat spammer", "newgen spam", bNewgenSpam)
+	secret.create_button("misc", "chat spammer", "ryan fournier spam", bFournierSpam)
+	secret.create_button("misc", "chat spammer", "femboy spam (extreme nsfw)", bFemboySpam)
+	secret.create_button("misc", "chat spammer", "shabeel spam", bShabeelSpam)
+	secret.create_button("misc", "chat spammer", "cat spam", bMeowSpam)
+	secret.create_button("misc", "chat spammer", "custom spam", bCustomSpam)
+	secret.create_button("misc", "chat spammer", "destroy all timers", bRemove)
 
