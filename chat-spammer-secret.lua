@@ -41,7 +41,7 @@ local function spamFunc(table, configName)
 		local message = table[math.random(1, #table)]
 
 		if secret.config_get("bOOC") then
-			RunConsoleCommand("say", "// " .. string.sub(message, 1, 126))
+			RunConsoleCommand("say", "// " .. string.sub(message, 1, 126)) -- will add more options soon:tm: 
 		else
 			RunConsoleCommand("say", message)
 		end
