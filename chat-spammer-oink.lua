@@ -106,7 +106,8 @@ local FEMBOY_CHATMESSAGES = {
     "I remember when I was t-ied up for hours with a dildo pumping into me. My a-ass has never been the same...",
     "I'm the #385923th cumdump in the world. You can use me for free uwu.",
     "P-Please DM me on discord. My name is 'iamleigh_'. E-Dating Prices are 5-10€ an hour.",
-	"p-p-please... master~ m-my b-belly is... hurting... mfgdfm~ p-plea-ah~"
+	"p-p-please... master~ m-my b-belly is... hurting... mfgdfm~ p-plea-ah~",
+	"m-m-master told m-me to p-put on these cute pink s-socks.. do you like them~"
 }
 
 local SHABEEL_CHATMESSAGES = {
