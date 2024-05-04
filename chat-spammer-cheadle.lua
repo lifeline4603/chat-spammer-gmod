@@ -157,7 +157,7 @@ local mMainMenu = cheadle_api.ImGui.UIMenu("chat-spammer.lua")
 
 -- buttons and sliders
 
-local sRate = cheadle_api.ImGui.Slider(mMainMenu, "rate of spam", 1, 5) -- I think I broke this 
+local sRate = cheadle_api.ImGui.Slider(mMainMenu, "rate of spam", 1, 5) -- i didn't break this lol
 sRate:SetSize(250, 23)
 sRate:SetPos(295, 34)
 sRate:OnChangeFunction(function()
