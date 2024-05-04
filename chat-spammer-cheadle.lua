@@ -188,7 +188,7 @@ bCheadle:SetClickFunction(function()
             RunConsoleCommand("ulx", "asay", string.sub(spamCheadle, 1, 126))
         elseif spamType:GetSelected() == "Psay Everyone" then -- OMG I REALLY NEED TO STOP WITH THE ELSEIFS :sob:
             for i, v in ipairs(player.GetAll()) do -- im not sure this is the "best" way of doing this but it semi works
-                if v != LocalPlayer() then
+                if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), spamCheadle)
                 end
             end
@@ -213,7 +213,7 @@ bHvh:SetClickFunction(function()
                 RunConsoleCommand("ulx", "asay", string.sub(spamHVH, 1, 126))
             elseif spamType:GetSelected() == "Psay Everyone" then
             for i, v in ipairs(player.GetAll()) do
-                if v != LocalPlayer() then
+                if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), spamHVH)
                 end
             end
@@ -238,7 +238,7 @@ bToxic:SetClickFunction(function()
                 RunConsoleCommand("ulx", "asay", string.sub(spamToxic, 1, 126))
             elseif spamType:GetSelected() == "Psay Everyone" then
             for i, v in ipairs(player.GetAll()) do
-                if v != LocalPlayer() then
+                if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), spamToxic)
                 end
             end
@@ -263,7 +263,7 @@ bBible:SetClickFunction(function()
             RunConsoleCommand("ulx", "asay", string.sub(spamBible, 1, 126))
         elseif spamType:GetSelected() == "Psay Everyone" then
             for i, v in ipairs(player.GetAll()) do
-                if v != LocalPlayer() then
+                if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), spamBible)
                 end
             end
@@ -306,7 +306,7 @@ bNewgen:SetClickFunction(function()
             RunConsoleCommand("ulx", "asay", string.sub(spamNewgen, 1, 126))
         elseif spamType:GetSelected() == "Psay Everyone" then
             for i, v in ipairs(player.GetAll()) do
-                if v != LocalPlayer() then
+                if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), spamNewgen)
                 end
             end
@@ -331,7 +331,7 @@ bFournier:SetClickFunction(function()
             RunConsoleCommand("ulx", "asay", string.sub(spamFournier, 1, 126))
         elseif spamType:GetSelected() == "Psay Everyone" then
             for i, v in ipairs(player.GetAll()) do
-                if v != LocalPlayer() then
+                if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), spamFournier)
                 end
             end
@@ -356,7 +356,7 @@ bFemboy:SetClickFunction(function()
             RunConsoleCommand("ulx", "asay", string.sub(spamFemboy, 1, 126))
         elseif spamType:GetSelected() == "Psay Everyone" then
             for i, v in ipairs(player.GetAll()) do
-                if v != LocalPlayer() then
+                if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), spamFemboy)
                 end
             end
@@ -381,7 +381,7 @@ bShabeel:SetClickFunction(function()
             RunConsoleCommand("ulx", "asay", string.sub(spamShabeel, 1, 126))
         elseif spamType:GetSelected() == "Psay Everyone" then
             for i, v in ipairs(player.GetAll()) do
-                if v != LocalPlayer() then
+                if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), spamShabeel)
                 end
             end
@@ -406,7 +406,7 @@ bMeow:SetClickFunction(function()
             RunConsoleCommand("ulx", "asay", string.sub(spamCat, 1, 126))
         elseif spamType:GetSelected() == "Psay Everyone" then
             for i, v in ipairs(player.GetAll()) do
-                if v != LocalPlayer() then
+                if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), spamCat)
                 end
             end
