@@ -106,7 +106,8 @@ local SHABEEL_CHATMESSAGES = {
     "SHABEEL OWNS YOUUUUUUUUUUUUUUUUUUUUUUUUUU",
     "youtube.com/@ShabeelExploits I love this youtube channel can someone help me find them?",
     "Hello I have downloaded server packet via epic exploit server is being backdoored SHABEEL WINNING",
-    "SHABEEL ON TOP OWNED BY SHABEEL"
+    "SHABEEL ON TOP OWNED BY SHABEEL",
+    "Join Tanya's Sandbox Server Where Friendships Come Together discord.gg/gaminglight"
 }
 
 local CAT_CHATMESSAGES = {
