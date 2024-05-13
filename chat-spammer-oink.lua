@@ -108,6 +108,7 @@ local FEMBOY_CHATMESSAGES = {
     "P-Please DM me on discord. My name is 'iamleigh_'. E-Dating Prices are 5-10€ an hour.",
 	"p-p-please... master~ m-my b-belly is... hurting... mfgdfm~ p-plea-ah~",
 	"m-m-master told m-me to p-put on these cute pink s-socks.. do you like them~"
+	"d-do you ever j-just use blahaj's fin to m-masterbait~ it feels s-soooo good~"
 }
 
 local SHABEEL_CHATMESSAGES = {
