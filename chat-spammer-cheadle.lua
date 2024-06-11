@@ -98,7 +98,8 @@ local FEMBOY_CHATMESSAGES = {
     "M-M-master told m-me to p-put on these cute pink s-socks.. do you like them~",
     "D-Do you ever j-just use blahaj's fin to m-masterbait~ it feels s-soooo good~",
     "Ooh~ I-I c-c-can't hold it anymore afg~ ahh~ s-s-sorry m-master I couldn't h-hold it anymore~",
-    "I-I j-just want to be p-pinned to the w-wall with m-my blahaj while m-master touch my g-good spots"
+    "I-I j-just want to be p-pinned to the w-wall with m-my blahaj while m-master touch my g-good spots",
+    "awoooooooo! ^w^ me ish such a silly lil boiiyo X3"
 }
 
 local SHABEEL_CHATMESSAGES = {
