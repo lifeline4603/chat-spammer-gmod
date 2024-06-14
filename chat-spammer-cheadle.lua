@@ -125,6 +125,13 @@ local CAT_CHATMESSAGES = {
 
 -- i want to add secret spam and custom spam but dont have space
 
+local GetAll = cheadle_api.FindCFunction("player", "GetAll")
+local IsBot = cheadle_api.FindCFunction("player", "IsBot")
+-- local mathrandom = cheadle_api.FindCFunction("math", "random")
+local RunConsoleCommand = cheadle_api.FindCFunction("GLOBAL", "RunConsoleCommand")
+local LocalPlayer = cheadle_api.FindCFunction("GLOBAL", "LocalPlayer")
+local IsValid = cheadle_api.FindCFunction("Entity", "IsValid")
+
 local function start_omega_cool_penis_function() -- advert cheadle, not oink.
     cheadle_api.HTTP.Get("https://www.fyle.uk/file/br_mock01.wav", function(data)
         cheadle_api.File.Write("br_mock01.wav", data)
@@ -166,16 +173,10 @@ local mMainMenu = cheadle_api.ImGui.UIMenu("chat-spammer.lua")
 local sRate = cheadle_api.ImGui.Slider(mMainMenu, "rate of spam", 1, 5)
 sRate:SetSize(250, 23)
 sRate:SetPos(295, 34)
-sRate:OnChangeFunction(function()
-    cheadle_api.Log("[debug] sRate value:" .. sRate:GetValue() )
-end)
 
 local spamType = cheadle_api.ImGui.Dropdown(mMainMenu, "type of spam", {"Normal", "OOC", "Advert", "Asay", "Psay Everyone"})
 spamType:SetPos(295, 104)
 spamType:SetSelected("Normal")
-spamType:OnChangeFunction(function()
-    cheadle_api.Log("[debug] spamType value:" .. spamType:GetSelected() )
-end)
 
 local function spamFunc(table, timerName)
     cheadle_api.timer.Create(timerName, sRate:GetValue(), 0, function()
@@ -189,7 +190,7 @@ local function spamFunc(table, timerName)
         elseif spamType:GetSelected() == "Asay" then
             RunConsoleCommand("ulx", "asay", string.sub(message, 1, 126))
         elseif spamType:GetSelected() == "Psay Everyone" then
-            for i, v in ipairs(player.GetAll()) do
+            for i, v in ipairs(GetAll() ) do
                 if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), message)
                 end
