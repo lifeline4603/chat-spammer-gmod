@@ -167,7 +167,7 @@ local sRate = cheadle_api.ImGui.Slider(mMainMenu, "rate of spam", 1, 5)
 sRate:SetSize(250, 23)
 sRate:SetPos(295, 34)
 sRate:OnChangeFunction(function()
-    cheadle_api.Log("[debug] slider value:" .. sRate:GetValue() )
+    cheadle_api.Log("[debug] sRate value:" .. sRate:GetValue() )
 end)
 
 local spamType = cheadle_api.ImGui.Dropdown(mMainMenu, "type of spam", {"Normal", "OOC", "Advert", "Asay", "Psay Everyone"})
