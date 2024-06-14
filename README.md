@@ -2,7 +2,7 @@
 an up to date chat spammer with frequent updates for 3 different cheats (oink.industries, cheadleware.net, secretservice.club)
 
 todo:
-- [ ] clean up code so ppl don't bug me about it anymore
+- [x] clean up code so ppl don't bug me about it anymore
 - [ ] global chat spammer
 - [ ] ulx psay/asay support
 - [x] ooc integration
