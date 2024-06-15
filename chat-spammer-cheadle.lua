@@ -127,6 +127,7 @@ local CAT_CHATMESSAGES = {
 
 local GetAll = cheadle_api.FindCFunction("player", "GetAll")
 local IsBot = cheadle_api.FindCFunction("player", "IsBot")
+local Nick = cheadle_api.FindCFunction("player", "Nick")
 -- local mathrandom = cheadle_api.FindCFunction("math", "random")
 local RunConsoleCommand = cheadle_api.FindCFunction("GLOBAL", "RunConsoleCommand")
 local LocalPlayer = cheadle_api.FindCFunction("GLOBAL", "LocalPlayer")
@@ -190,7 +191,7 @@ local function spamFunc(table, timerName)
         elseif spamType:GetSelected() == "Asay" then
             RunConsoleCommand("ulx", "asay", string.sub(message, 1, 126))
         elseif spamType:GetSelected() == "Psay Everyone" then
-            for i, v in ipairs(GetAll() ) do
+            for i, v in ipairs(GetAll()) do -- if you want to do a specific person do GetAll()[1] change 1 to the player's number (do status in console)
                 if v != LocalPlayer() and not v:IsBot() then
                     RunConsoleCommand("ulx", "psay", v:Nick(), message)
                 end
