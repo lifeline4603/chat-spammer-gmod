@@ -14,11 +14,22 @@ local SECRET_CHATMESSAGES = {"secretservice on top! get at secretservice.club", 
 -- Replace these with whatever
 local CUSTOM_CHATMESSAGES = {"replace with custom message here", "replace with custom message here", "replace with custom message here", "replace with custom message here", "replace with custom message here", "replace with custom message here", "replace with custom message here", "replace with custom message here", "replace with custom message here", "replace with custom message here", "replace with custom message here", "replace with custom message here"}
 
+local GetAll = secret.get_original("player", "GetAll")
+local IsBot = secret.get_original("player", "IsBot")
+local Nick = secret.get_original("player", "Nick")
+local RunConsoleCommand = secret.get_original("GLOBAL", "RunConsoleCommand")
+local LocalPlayer = secret.get_original("GLOBAL", "LocalPlayer")
+local IsValid = secret.get_original("Entity", "IsValid")
+local timerRemove = secret.get_original("timer", "Remove")
+local timerCreate = secret.get_original("timer", "Create")
+
 secret.notify("Check secret console", 1)
 secret.log("[chat-spammer.lua] If you've switched servers and the spammer isn't working, press clear elements and then execute in client state again", 1, false)
+
 -- Boxs and shit
-secret.create_groupbox("lua", "right", "elements", 400)
-secret.create_slider("lua", "elements", "Spam Rate", 1, 5, "sRate")
+secret.create_groupbox("lua", "right", "elements", 416)
+secret.create_slider("lua", "elements", "Spam Rate use 0", 0, 5, "sRate") -- IDK WHY but when you set it to above 0 it doesn't work
+secret.create_dropdown("lua", "elements", "type of spam", "spamType", {"Normal", "OOC", "Advert", "Asay", "Psay Everyone"})
 secret.create_checkbox("lua", "elements", "Oink Spam/Advert", "bOink")
 secret.create_checkbox("lua", "elements", "HvH Spam", "bHvH")
 secret.create_checkbox("lua", "elements", "Toxic Spam", "bToxic")
@@ -32,20 +43,30 @@ secret.create_checkbox("lua", "elements", "Shabeel Spam", "bShabeel")
 secret.create_checkbox("lua", "elements", "Cat Spam", "bCat")
 secret.create_checkbox("lua", "elements", "SecretService Spam", "bSecretService")
 secret.create_checkbox("lua", "elements", "Custom Spam", "bCustom")
-secret.create_checkbox("lua", "elements", "OOC Spam", "bOOC")
+secret.config_set("spamType", 0)
 
 local function spamFunc(table, configName)
-	if not secret.config_get(configName) then timer.Remove(configName .. "_timer") return end
+	if not secret.config_get(configName) then timerRemove(configName .. "_timer") return end
 
-	timer.Create(configName .. "_timer", secret.config_get("sRate"), 0, function()
+	timerCreate(configName .. "_timer", secret.config_get("sRate"), 0, function()
 		local message = table[math.random(1, #table)]
 
-		if secret.config_get("bOOC") then
-			RunConsoleCommand("say", "// " .. string.sub(message, 1, 126)) -- will add more options soon:tm: (when i get a sub :point_right::point_left:) 
-		else
-			RunConsoleCommand("say", message)
-		end
-	end)
+		if secret.config_get("spamType") == 0 then
+            RunConsoleCommand("say", message)
+        elseif secret.config_get("spamType") == 1 then
+            RunConsoleCommand("say", "// " .. string.sub(message, 1, 126)) 
+        elseif secret.config_get("spamType") == 2 then 
+            RunConsoleCommand("say", "/advert " .. string.sub(message, 1, 119))
+        elseif secret.config_get("spamType") == 3 then
+            RunConsoleCommand("ulx", "asay", string.sub(message, 1, 126))
+        elseif secret.config_get("spamType") == 4 then
+            for i, v in ipairs(GetAll()) do
+                if v != LocalPlayer() and not v:IsBot() then
+                    RunConsoleCommand("ulx", "psay", v:Nick(), message)
+                end
+            end
+        end
+    end)
 end
 
 secret.event_remove("think", "cSpammer")
@@ -73,17 +94,17 @@ secret.event_listen("think", "cSpammer", function()
 end)
 
 secret.create_button("lua", "elements", "Destroy Timers", function()
-	timer.Remove("bOink_timer")
-	timer.Remove("bHvH_timer")
-	timer.Remove("bToxic_timer")
-	timer.Remove("bBible_timer")
-	timer.Remove("bCheadleware_timer")
-	timer.Remove("bNewGen_timer")
-	timer.Remove("bRyanFournier_timer")
-	timer.Remove("bFemboy_timer")
-	timer.Remove("bShabeel_timer")
-	timer.Remove("bCat_timer")
-	timer.Remove("bSecretService_timer")
-	timer.Remove("bCustom_timer")
+	timerRemove("bOink_timer")
+	timerRemove("bHvH_timer")
+	timerRemove("bToxic_timer")
+	timerRemove("bBible_timer")
+	timerRemove("bCheadleware_timer")
+	timerRemove("bNewGen_timer")
+	timerRemove("bRyanFournier_timer")
+	timerRemove("bFemboy_timer")
+	timerRemove("bShabeel_timer")
+	timerRemove("bCat_timer")
+	timerRemove("bSecretService_timer")
+	timerRemove("bCustom_timer")
 	secret.notify("[chat-spammer.lua] All timers destroyed", 0)
 end)
