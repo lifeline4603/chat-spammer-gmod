@@ -35,7 +35,8 @@ local TOXICTALK_CHATMESSAGES = {
 	"lol you literally got owned by a child.",
 	"I WILL DOMINATE YOU BECAUSE IM YOUR MASTER, KITTEN...",
 	"HAHAHAHHAHAH OWNEDDDDDDDDDDDDDDDDD",
-	"FEELS LIKE TACOBOT.TF. IN REALITY, IM JUST BETTER."
+	"FEELS LIKE TACOBOT.TF. IN REALITY, IM JUST BETTER.",
+	"HAHAHA YOUR GETTING TRACKED MEGASCATTERBOMB.COM"
 }
 
 local BIBLE_CHATMESSAGES = {
@@ -104,7 +105,13 @@ local FEMBOY_CHATMESSAGES = {
     "You can p-pinch and twist both of my nipples. They're very sensitive and round.",
     "I remember when I was t-ied up for hours with a dildo pumping into me. My a-ass has never been the same...",
     "I'm the #385923th cumdump in the world. You can use me for free uwu.",
-    "P-Please DM me on discord. My name is 'iamleigh_'. E-Dating Prices are 5-10€ an hour."
+    "P-Please DM me on discord. My name is 'iamleigh_'. E-Dating Prices are 5-10€ an hour.",
+	"P-P-please... master~ m-my b-belly is... hurting... mfgdfm~ p-plea-ah~",
+    "M-M-master told m-me to p-put on these cute pink s-socks.. do you like them~",
+    "D-Do you ever j-just use blahaj's fin to m-masterbait~ it feels s-soooo good~",
+    "Ooh~ I-I c-c-can't hold it anymore afg~ ahh~ s-s-sorry m-master I couldn't h-hold it anymore~",
+    "I-I j-just want to be p-pinned to the w-wall with m-my blahaj while m-master touch my g-good spots",
+	"awoooooooo! ^w^ me ish such a silly lil boiiyo X3"
 }
 
 local SHABEEL_CHATMESSAGES = {
