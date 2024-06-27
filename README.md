@@ -4,8 +4,8 @@ an up to date chat spammer with frequent updates for 3 different cheats (oink.in
 todo:
 - [x] clean up code so ppl don't bug me about it anymore
 - [ ] global chat spammer
-- [ ] ulx psay/asay support
+- [x] ulx psay/asay support
 - [x] ooc integration
-- [ ] advert integration for oink and secret
+- [ ] advert integration for oink
 - [x] secret spam
 - [x] fix chat-spammer-secret.lua
